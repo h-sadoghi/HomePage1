@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/Classification/PR_intro_Classification';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Machine Learning" href="../../machine_learning.html" />
+    <link rel="next" title="Support Vector Data Description (SVDD)" href="SVDD.html" />
     <link rel="prev" title="Applications in Pattern Recognition" href="../Regression/ApplicationsPatternRecognition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,23 +207,25 @@
 <li class="toctree-l4"><a class="reference internal" href="../Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Classification</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Classification</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="SVDD.html">Support Vector Data Description (SVDD)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../ML/Regression/NonParamRegression.html">Regression Review</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ML/Regression/KernelRegression.html">Kernel Regression</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ML/Regression/GP_Regression.html">Regresion with GP</a></li>
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l3"><a class="reference internal" href="../../ML/Regression/GP_Regression.html">Gaussian Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ML/FeatureReduction/FR_Intro.html">Introduction of Feature Reduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ML/FeatureReduction/PCA.html">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../filtering_algorithms.html">Filtering Algorithms</a></li>
@@ -231,7 +233,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../image_processing.html">Image Processing</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Blog.html">Blog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../PRLabProduction.html">Pattern Lab Production</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Students.html">Students Works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Contact_Me.html">Contact Me</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../About_Me.html">About Me</a></li>
 </ul>
@@ -429,6 +436,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition-of-classification">Mathematical Definition of Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-classification-function">Example of a Classification Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-the-function-f">Learning the Function <span class="math notranslate nohighlight">\( f \)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-algorithms">Classification Algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-algorithm-for-classification">A simple algorithm for classification</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-derivation">Step-by-Step Derivation</a></li>
 </ul>
@@ -446,6 +459,79 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="classification">
 <h1>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h1>
+<p>Classification is a fundamental task in the field of pattern recognition, involving the assignment of input data into predefined categories based on their features.</p>
+<section id="mathematical-definition-of-classification">
+<h2>Mathematical Definition of Classification<a class="headerlink" href="#mathematical-definition-of-classification" title="Link to this heading">#</a></h2>
+<p>Classification can be mathematically defined as the task of learning a function <span class="math notranslate nohighlight">\( f \)</span> that maps input vectors to discrete output labels. This function <span class="math notranslate nohighlight">\( f \)</span> is learned from a set of training data <span class="math notranslate nohighlight">\( D \)</span>.</p>
+<p>Given a training dataset:</p>
+<div class="math notranslate nohighlight">
+\[
+D = \{ (\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \ldots, (\mathbf{x}_n, y_n) \}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathbf{x}_i \in \mathbb{R}^d \)</span> represents the <span class="math notranslate nohighlight">\( i \)</span>-th input vector with <span class="math notranslate nohighlight">\( d \)</span> features.</p></li>
+<li><p><span class="math notranslate nohighlight">\( y_i \in \mathbb{R} \)</span> represents the corresponding output label (for classification, <span class="math notranslate nohighlight">\( y_i \)</span> typically takes discrete values).</p></li>
+</ul>
+<p>The objective is to learn a function <span class="math notranslate nohighlight">\( f \)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[
+y = f(\mathbf{x})
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\( f \)</span> maps an input vector <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> from the <span class="math notranslate nohighlight">\( d \)</span>-dimensional input space <span class="math notranslate nohighlight">\( \mathbb{R}^d \)</span> to a scalar value <span class="math notranslate nohighlight">\( y \)</span> in the output space <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f: \mathbb{R}^d \rightarrow \mathbb{R}
+\]</div>
+<p>For classification, the function <span class="math notranslate nohighlight">\( f \)</span> usually predicts discrete class labels. The output space <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> can be interpreted differently depending on the type of classification:</p>
+<ul class="simple">
+<li><p><strong>Binary Classification:</strong> <span class="math notranslate nohighlight">\( y \in \{0, 1\} \)</span> or <span class="math notranslate nohighlight">\( y \in \{-1, 1\} \)</span>.</p></li>
+<li><p><strong>Multi-Class Classification:</strong> <span class="math notranslate nohighlight">\( y \in \{1, 2, \ldots, K\} \)</span>, where <span class="math notranslate nohighlight">\( K \)</span> is the number of classes.</p></li>
+<li><p><strong>Multi-Label Classification:</strong> Each <span class="math notranslate nohighlight">\( y \)</span> can be a vector of binary values indicating the presence of multiple classes simultaneously.</p></li>
+</ul>
+<section id="example-of-a-classification-function">
+<h3>Example of a Classification Function<a class="headerlink" href="#example-of-a-classification-function" title="Link to this heading">#</a></h3>
+<p>A common example is logistic regression for binary classification. Here, the function <span class="math notranslate nohighlight">\( f \)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+f(\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x} + b)
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \mathbf{w} \in \mathbb{R}^d \)</span> is the weight vector.</p></li>
+<li><p><span class="math notranslate nohighlight">\( b \in \mathbb{R} \)</span> is the bias term.</p></li>
+<li><p><span class="math notranslate nohighlight">\( \sigma(z) = \frac{1}{1 + e^{-z}} \)</span> is the sigmoid function that maps the linear combination of features to a probability between 0 and 1.</p></li>
+</ul>
+<p>The predicted class label <span class="math notranslate nohighlight">\( \hat{y} \)</span> is then obtained by thresholding the output of <span class="math notranslate nohighlight">\( f \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{y} = \begin{cases} 
+1 &amp; \text{if } f(\mathbf{x}) \geq 0.5 \\ 
+0 &amp; \text{if } f(\mathbf{x}) &lt; 0.5 
+\end{cases}
+\end{split}\]</div>
+</section>
+<section id="learning-the-function-f">
+<h3>Learning the Function <span class="math notranslate nohighlight">\( f \)</span><a class="headerlink" href="#learning-the-function-f" title="Link to this heading">#</a></h3>
+<p>The function <span class="math notranslate nohighlight">\( f \)</span> is learned by optimizing an objective function, such as minimizing the classification error or maximizing the likelihood of the observed data. For example, in logistic regression, the parameters <span class="math notranslate nohighlight">\( \mathbf{w} \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are typically learned by minimizing the cross-entropy loss:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Loss} = -\frac{1}{n} \sum_{i=1}^n \left[ y_i \log(f(\mathbf{x}_i)) + (1 - y_i) \log(1 - f(\mathbf{x}_i)) \right]
+\]</div>
+</section>
+</section>
+<section id="classification-algorithms">
+<h2>Classification Algorithms<a class="headerlink" href="#classification-algorithms" title="Link to this heading">#</a></h2>
+<p>Numerous algorithms have been developed for classification tasks, each with its strengths and weaknesses. Some popular classification algorithms include:</p>
+<ul class="simple">
+<li><p><strong>Fisher classifier:</strong> A linear model that estimates the probability of a binary outcome.</p></li>
+<li><p><strong>Decision Trees:</strong> Non-linear models that split data into subsets based on feature values, forming a tree-like structure.</p></li>
+<li><p><strong>Support Vector Machines (SVM):</strong> Powerful models that find the optimal hyperplane to separate different classes.</p></li>
+<li><p><strong>Baysian Classifier:</strong> A Bayesian classifier uses Bayes’ Rule to predict the probability that a given data point belongs to a particular class based on prior knowledge of conditions related to the class.</p></li>
+<li><p><strong>k-Nearest Neighbors (k-NN):</strong> A simple, instance-based learning algorithm that classifies a data point based on the majority class of its k nearest neighbors.</p></li>
+<li><p><strong>Neural Networks:</strong> Highly flexible models capable of capturing complex patterns, especially useful in deep learning for tasks like image and speech recognition.</p></li>
+</ul>
+</section>
 <section id="a-simple-algorithm-for-classification">
 <h2>A simple algorithm for classification<a class="headerlink" href="#a-simple-algorithm-for-classification" title="Link to this heading">#</a></h2>
 <p>In binary classification using kernel methods, you can classify a test point <span class="math notranslate nohighlight">\( x \)</span> by comparing its distance to the centers of mass (centroids) of positive and negative examples. Here’s a step-by-step derivation and explanation based on the kernelized distance approach:</p>
@@ -543,6 +629,8 @@ document.write(`
 </ol>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -585,11 +673,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../machine_learning.html"
+       href="SVDD.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine Learning</p>
+        <p class="prev-next-title">Support Vector Data Description (SVDD)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -609,6 +697,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition-of-classification">Mathematical Definition of Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-classification-function">Example of a Classification Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-the-function-f">Learning the Function <span class="math notranslate nohighlight">\( f \)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-algorithms">Classification Algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-algorithm-for-classification">A simple algorithm for classification</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-derivation">Step-by-Step Derivation</a></li>
 </ul>
