@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Classification &#8212; Dr.Hadi Sadoghi Yazdi</title>
+    <title>Supplementary for PR &#8212; Dr.Hadi Sadoghi Yazdi</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/Classification/PR_intro_Classification';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/SupplementaryDocuments/Supplementary1';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Support Vector Data Description (SVDD)" href="SVDD.html" />
-    <link rel="prev" title="Applications in Pattern Recognition" href="../Regression/ApplicationsPatternRecognition.html" />
+    <link rel="next" title="Machine Learning" href="../../machine_learning.html" />
+    <link rel="prev" title="Gaussian Mixture Model" href="../BayesEstimation/GMM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,9 +205,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Classification</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="SVDD.html">Support Vector Data Description (SVDD)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -218,6 +216,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
 </ul>
 </details></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Supplementary for PR</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../machine_learning.html">Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -316,7 +315,7 @@
       
       
       
-      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/PR/Classification/PR_intro_Classification.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/PR/SupplementaryDocuments/Supplementary1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +345,7 @@
       
       
       
-      <li><a href="../../../_sources/courses/PR/Classification/PR_intro_Classification.ipynb" target="_blank"
+      <li><a href="../../../_sources/courses/PR/SupplementaryDocuments/Supplementary1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -417,9 +416,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -430,28 +427,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Classification</h1>
+    <h1>Supplementary for PR</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition-of-classification">Mathematical Definition of Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-classification-function">Example of a Classification Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-the-function-f">Learning the Function <span class="math notranslate nohighlight">\( f \)</span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-algorithms">Classification Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-algorithm-for-classification">A simple algorithm for classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-derivation">Step-by-Step Derivation</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -461,180 +441,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h1>
-<p>Classification is a fundamental task in the field of pattern recognition, involving the assignment of input data into predefined categories based on their features.</p>
-<section id="mathematical-definition-of-classification">
-<h2>Mathematical Definition of Classification<a class="headerlink" href="#mathematical-definition-of-classification" title="Link to this heading">#</a></h2>
-<p>Classification can be mathematically defined as the task of learning a function <span class="math notranslate nohighlight">\( f \)</span> that maps input vectors to discrete output labels. This function <span class="math notranslate nohighlight">\( f \)</span> is learned from a set of training data <span class="math notranslate nohighlight">\( D \)</span>.</p>
-<p>Given a training dataset:</p>
-<div class="math notranslate nohighlight">
-\[
-D = \{ (\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \ldots, (\mathbf{x}_n, y_n) \}
-\]</div>
-<p>where:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="supplementary-for-pr">
+<h1>Supplementary for PR<a class="headerlink" href="#supplementary-for-pr" title="Link to this heading">#</a></h1>
+<p>In this section, we provide additional resources and mathematical foundations crucial for understanding and applying pattern recognition techniques. Some of topics are covered:</p>
+<ol class="arabic simple">
+<li><p><strong>Eigenvalue Decomposition</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( \mathbf{x}_i \in \mathbb{R}^d \)</span> represents the <span class="math notranslate nohighlight">\( i \)</span>-th input vector with <span class="math notranslate nohighlight">\( d \)</span> features.</p></li>
-<li><p><span class="math notranslate nohighlight">\( y_i \in \mathbb{R} \)</span> represents the corresponding output label (for classification, <span class="math notranslate nohighlight">\( y_i \)</span> typically takes discrete values).</p></li>
+<li><p>Understanding the decomposition of matrices into eigenvalues and eigenvectors and its applications in pattern recognition.</p></li>
 </ul>
-<p>The objective is to learn a function <span class="math notranslate nohighlight">\( f \)</span> such that:</p>
-<div class="math notranslate nohighlight">
-\[
-y = f(\mathbf{x})
-\]</div>
-<p>Here, <span class="math notranslate nohighlight">\( f \)</span> maps an input vector <span class="math notranslate nohighlight">\( \mathbf{x} \)</span> from the <span class="math notranslate nohighlight">\( d \)</span>-dimensional input space <span class="math notranslate nohighlight">\( \mathbb{R}^d \)</span> to a scalar value <span class="math notranslate nohighlight">\( y \)</span> in the output space <span class="math notranslate nohighlight">\( \mathbb{R} \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-f: \mathbb{R}^d \rightarrow \mathbb{R}
-\]</div>
-<p>For classification, the function <span class="math notranslate nohighlight">\( f \)</span> usually predicts discrete class labels. The output space <span class="math notranslate nohighlight">\( \mathbb{R} \)</span> can be interpreted differently depending on the type of classification:</p>
+</li>
+<li><p><strong>Convex Programming</strong></p>
 <ul class="simple">
-<li><p><strong>Binary Classification:</strong> <span class="math notranslate nohighlight">\( y \in \{0, 1\} \)</span> or <span class="math notranslate nohighlight">\( y \in \{-1, 1\} \)</span>.</p></li>
-<li><p><strong>Multi-Class Classification:</strong> <span class="math notranslate nohighlight">\( y \in \{1, 2, \ldots, K\} \)</span>, where <span class="math notranslate nohighlight">\( K \)</span> is the number of classes.</p></li>
-<li><p><strong>Multi-Label Classification:</strong> Each <span class="math notranslate nohighlight">\( y \)</span> can be a vector of binary values indicating the presence of multiple classes simultaneously.</p></li>
+<li><p><strong>Linear Programming</strong>: Optimization techniques for linear objective functions subject to linear constraints.</p></li>
+<li><p><strong>Quadratic Programming</strong>: Optimization involving quadratic objective functions with linear constraints.</p></li>
 </ul>
-<section id="example-of-a-classification-function">
-<h3>Example of a Classification Function<a class="headerlink" href="#example-of-a-classification-function" title="Link to this heading">#</a></h3>
-<p>A common example is logistic regression for binary classification. Here, the function <span class="math notranslate nohighlight">\( f \)</span> is defined as:</p>
-<div class="math notranslate nohighlight">
-\[
-f(\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x} + b)
-\]</div>
-<p>where:</p>
+</li>
+<li><p><strong>Singular Value Decomposition (SVD)</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( \mathbf{w} \in \mathbb{R}^d \)</span> is the weight vector.</p></li>
-<li><p><span class="math notranslate nohighlight">\( b \in \mathbb{R} \)</span> is the bias term.</p></li>
-<li><p><span class="math notranslate nohighlight">\( \sigma(z) = \frac{1}{1 + e^{-z}} \)</span> is the sigmoid function that maps the linear combination of features to a probability between 0 and 1.</p></li>
+<li><p>Decomposition of matrices and its use in dimensionality reduction and feature extraction.</p></li>
 </ul>
-<p>The predicted class label <span class="math notranslate nohighlight">\( \hat{y} \)</span> is then obtained by thresholding the output of <span class="math notranslate nohighlight">\( f \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\hat{y} = \begin{cases} 
-1 &amp; \text{if } f(\mathbf{x}) \geq 0.5 \\ 
-0 &amp; \text{if } f(\mathbf{x}) &lt; 0.5 
-\end{cases}
-\end{split}\]</div>
-</section>
-<section id="learning-the-function-f">
-<h3>Learning the Function <span class="math notranslate nohighlight">\( f \)</span><a class="headerlink" href="#learning-the-function-f" title="Link to this heading">#</a></h3>
-<p>The function <span class="math notranslate nohighlight">\( f \)</span> is learned by optimizing an objective function, such as minimizing the classification error or maximizing the likelihood of the observed data. For example, in logistic regression, the parameters <span class="math notranslate nohighlight">\( \mathbf{w} \)</span> and <span class="math notranslate nohighlight">\( b \)</span> are typically learned by minimizing the cross-entropy loss:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{Loss} = -\frac{1}{n} \sum_{i=1}^n \left[ y_i \log(f(\mathbf{x}_i)) + (1 - y_i) \log(1 - f(\mathbf{x}_i)) \right]
-\]</div>
-</section>
-</section>
-<section id="classification-algorithms">
-<h2>Classification Algorithms<a class="headerlink" href="#classification-algorithms" title="Link to this heading">#</a></h2>
-<p>Numerous algorithms have been developed for classification tasks, each with its strengths and weaknesses. Some popular classification algorithms include:</p>
+</li>
+<li><p><strong>Optimization Algorithms</strong></p>
 <ul class="simple">
-<li><p><strong>Fisher classifier:</strong> A linear model that estimates the probability of a binary outcome.</p></li>
-<li><p><strong>Decision Trees:</strong> Non-linear models that split data into subsets based on feature values, forming a tree-like structure.</p></li>
-<li><p><strong>Support Vector Machines (SVM):</strong> Powerful models that find the optimal hyperplane to separate different classes.</p></li>
-<li><p><strong>Baysian Classifier:</strong> A Bayesian classifier uses Bayes’ Rule to predict the probability that a given data point belongs to a particular class based on prior knowledge of conditions related to the class.</p></li>
-<li><p><strong>k-Nearest Neighbors (k-NN):</strong> A simple, instance-based learning algorithm that classifies a data point based on the majority class of its k nearest neighbors.</p></li>
-<li><p><strong>Neural Networks:</strong> Highly flexible models capable of capturing complex patterns, especially useful in deep learning for tasks like image and speech recognition.</p></li>
+<li><p>Techniques for solving optimization problems, including gradient descent and more advanced methods.</p></li>
 </ul>
-</section>
-<section id="a-simple-algorithm-for-classification">
-<h2>A simple algorithm for classification<a class="headerlink" href="#a-simple-algorithm-for-classification" title="Link to this heading">#</a></h2>
-<p>In binary classification using kernel methods, you can classify a test point <span class="math notranslate nohighlight">\( x \)</span> by comparing its distance to the centers of mass (centroids) of positive and negative examples. Here’s a step-by-step derivation and explanation based on the kernelized distance approach:</p>
-<section id="step-by-step-derivation">
-<h3>Step-by-Step Derivation<a class="headerlink" href="#step-by-step-derivation" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p><strong>Define the Center of Mass:</strong></p>
-<p>Let <span class="math notranslate nohighlight">\( S^+ \)</span> and <span class="math notranslate nohighlight">\( S^- \)</span> be the sets of positive and negative training examples, respectively. The center of mass (centroid) in the feature space for positive examples <span class="math notranslate nohighlight">\( \phi(S^+) \)</span> and negative examples <span class="math notranslate nohighlight">\( \phi(S^-) \)</span> are:</p>
-<div class="math notranslate nohighlight">
-\[
-   \phi_S^+ = \frac{1}{|S^+|} \sum_{x_i \in S^+} \phi(x_i)
-   \]</div>
-<div class="math notranslate nohighlight">
-\[
-   \phi_S^- = \frac{1}{|S^-|} \sum_{x_i \in S^-} \phi(x_i)
-   \]</div>
-</li>
-<li><p><strong>Distance from the Centroids:</strong></p>
-<p>The squared distance from a test point <span class="math notranslate nohighlight">\( x \)</span> to the positive centroid <span class="math notranslate nohighlight">\( \phi_S^+ \)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[
-   d^+(x) = \|\phi(x) - \phi_S^+\|^2
-   \]</div>
-<p>Similarly, the squared distance from <span class="math notranslate nohighlight">\( x \)</span> to the negative centroid <span class="math notranslate nohighlight">\( \phi_S^- \)</span> is:</p>
-<div class="math notranslate nohighlight">
-\[
-   d^-(x) = \|\phi(x) - \phi_S^-\|^2
-   \]</div>
-</li>
-<li><p><strong>Calculate the Distances:</strong></p>
-<p>Using the properties of the kernel function and the centroids, we get:</p>
-<div class="math notranslate nohighlight">
-\[
-   d^+(x) = \|\phi(x) - \phi_S^+\|^2 = \|\phi(x)\|^2 + \|\phi_S^+\|^2 - 2 \langle \phi(x), \phi_S^+ \rangle
-   \]</div>
-<div class="math notranslate nohighlight">
-\[
-   d^-(x) = \|\phi(x) - \phi_S^-\|^2 = \|\phi(x)\|^2 + \|\phi_S^-\|^2 - 2 \langle \phi(x), \phi_S^- \rangle
-   \]</div>
-<p>Substitute <span class="math notranslate nohighlight">\( \|\phi(x)\|^2 = \kappa(x, x) \)</span> and the inner products <span class="math notranslate nohighlight">\( \langle \phi(x), \phi_S^+ \rangle \)</span> and <span class="math notranslate nohighlight">\( \langle \phi(x), \phi_S^- \rangle \)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-   \langle \phi(x), \phi_S^+ \rangle = \frac{1}{|S^+|} \sum_{x_i \in S^+} \kappa(x, x_i)
-   \]</div>
-<div class="math notranslate nohighlight">
-\[
-   \langle \phi(x), \phi_S^- \rangle = \frac{1}{|S^-|} \sum_{x_i \in S^-} \kappa(x, x_i)
-   \]</div>
-<p>So:</p>
-<div class="math notranslate nohighlight">
-\[
-   d^+(x) = \kappa(x, x) + \frac{1}{|S^+|^2} \sum_{i=1}^{|S^+|} \sum_{j=1}^{|S^+|} \kappa(x_i, x_j) - \frac{2}{|S^+|} \sum_{i=1}^{|S^+|} \kappa(x, x_i)
-   \]</div>
-<div class="math notranslate nohighlight">
-\[
-   d^-(x) = \kappa(x, x) + \frac{1}{|S^-|^2} \sum_{i=1}^{|S^-|} \sum_{j=1}^{|S^-|} \kappa(x_i, x_j) - \frac{2}{|S^-|} \sum_{i=1}^{|S^-|} \kappa(x, x_i)
-   \]</div>
-</li>
-<li><p><strong>Simplify the Classification Rule:</strong></p>
-<p>To classify <span class="math notranslate nohighlight">\( x \)</span>, compare <span class="math notranslate nohighlight">\( d^+(x) \)</span> and <span class="math notranslate nohighlight">\( d^-(x) \)</span>. The classification rule is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-   h(x) = \begin{cases} 
-   +1 &amp; \text{if } d^-(x) &gt; d^+(x) \\
-   -1 &amp; \text{otherwise}
-   \end{cases}
-   \end{split}\]</div>
-<p>We can simplify this using the sign function. Express <span class="math notranslate nohighlight">\( d^+(x) \)</span> and <span class="math notranslate nohighlight">\( d^-(x) \)</span> in terms of kernel evaluations:</p>
-<div class="math notranslate nohighlight">
-\[
-   d^+(x) = \kappa(x, x) + \frac{1}{|S^+|^2} \sum_{i=1}^{|S^+|} \sum_{j=1}^{|S^+|} \kappa(x_i, x_j) - \frac{2}{|S^+|} \sum_{i=1}^{|S^+|} \kappa(x, x_i)
-   \]</div>
-<div class="math notranslate nohighlight">
-\[
-   d^-(x) = \kappa(x, x) + \frac{1}{|S^-|^2} \sum_{i=1}^{|S^-|} \sum_{j=1}^{|S^-|} \kappa(x_i, x_j) - \frac{2}{|S^-|} \sum_{i=1}^{|S^-|} \kappa(x, x_i)
-   \]</div>
-<p>Thus:</p>
-<div class="math notranslate nohighlight">
-\[
-   h(x) = \text{sgn} \left( \frac{1}{|S^+|^2} \sum_{i=1}^{|S^+|} \sum_{j=1}^{|S^+|} \kappa(x_i, x_j) - \frac{1}{|S^-|^2} \sum_{i=1}^{|S^-|} \sum_{j=1}^{|S^-|} \kappa(x_i, x_j) - \frac{2}{|S^+|} \sum_{i=1}^{|S^+|} \kappa(x, x_i) + \frac{2}{|S^-|} \sum_{i=1}^{|S^-|} \kappa(x, x_i) \right)
-   \]</div>
-</li>
-<li><p><strong>Final Classification Function:</strong></p>
-<p>To simplify, let:</p>
-<div class="math notranslate nohighlight">
-\[
-   b = \frac{1}{2} \left( \frac{1}{|S^+|^2} \sum_{i=1}^{|S^+|} \sum_{j=1}^{|S^+|} \kappa(x_i, x_j) - \frac{1}{|S^-|^2} \sum_{i=1}^{|S^-|} \sum_{j=1}^{|S^-|} \kappa(x_i, x_j) \right)
-   \]</div>
-<p>Therefore:</p>
-<div class="math notranslate nohighlight">
-\[
-   h(x) = \text{sgn} \left( \frac{1}{|S^+|} \sum_{i=1}^{|S^+|} \kappa(x, x_i) - \frac{1}{|S^-|} \sum_{i=1}^{|S^-|} \kappa(x, x_i) - b \right)
-   \]</div>
 </li>
 </ol>
-</section>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -650,7 +482,7 @@ f(\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x} + b)
         },
         kernelOptions: {
             name: "python3",
-            path: "./courses\PR\Classification"
+            path: "./courses\PR\SupplementaryDocuments"
         },
         predefinedOutput: true
     }
@@ -668,20 +500,20 @@ f(\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x} + b)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Regression/ApplicationsPatternRecognition.html"
+       href="../BayesEstimation/GMM.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Applications in Pattern Recognition</p>
+        <p class="prev-next-title">Gaussian Mixture Model</p>
       </div>
     </a>
     <a class="right-next"
-       href="SVDD.html"
+       href="../../machine_learning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Support Vector Data Description (SVDD)</p>
+        <p class="prev-next-title">Machine Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -691,30 +523,6 @@ f(\mathbf{x}) = \sigma(\mathbf{w}^T \mathbf{x} + b)
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition-of-classification">Mathematical Definition of Classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-a-classification-function">Example of a Classification Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-the-function-f">Learning the Function <span class="math notranslate nohighlight">\( f \)</span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-algorithms">Classification Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-algorithm-for-classification">A simple algorithm for classification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-derivation">Step-by-Step Derivation</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

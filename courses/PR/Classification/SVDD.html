@@ -238,7 +238,10 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../../../ProposalPhD_Develop.html">Proposal PhD Develope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Students.html">Students Works</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Contact_Me.html">Contact Me</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../About_Me.html">About Me</a></li>
 </ul>
@@ -440,9 +443,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="support-vector-data-description-svdd">
 <h1>Support Vector Data Description (SVDD)<a class="headerlink" href="#support-vector-data-description-svdd" title="Link to this heading">#</a></h1>
-<p>Support Vector Data Description (SVDD) is indeed a one-class classifier primarily used for anomaly detection and outlier detection. Unlike traditional classification methods that distinguish between multiple classes, SVDD focuses on defining a boundary around a single class of data, effectively distinguishing it from all other data points that are considered anomalies or outliers.</p>
 <p><strong>Prepared by Ahmadi</strong> Contact in Telegram: &#64;Takavosh</p>
 <p><img alt="Ahmadi" src="../../../_images/Ahmadi.jpg" /></p>
+<p>Support Vector Data Description (SVDD) is indeed a one-class classifier primarily used for anomaly detection and outlier detection. Unlike traditional classification methods that distinguish between multiple classes, SVDD focuses on defining a boundary around a single class of data, effectively distinguishing it from all other data points that are considered anomalies or outliers.</p>
 <p>This classifier was proposed by Tax in 2004. It is a one-class classifier based on support vectors aimed at providing a description for data of a single class. Using this type of classifier, a decision boundary is obtained that makes it easy to determine whether new data belong to the target class or are outliers. By combining several one-class classifiers, powerful multi-class classifiers can also be created. Additionally, one of the significant advantages of one-class classifiers is that they do not require samples from other classes in the learning process. In other words, to obtain a suitable decision boundary and evaluate the membership of test samples to a class, the system only needs a limited number of training data from the same class.</p>
 <p>The assumed boundary for this classifier is a hypersphere with center <span class="math notranslate nohighlight">\(a\)</span> and radius <span class="math notranslate nohighlight">\(R\)</span>, covering the learning samples of the target class with the smallest possible radius. In the figure below, the hypersphere surrounding the data represents the boundary of the SVDD classifier.</p>
 <p>Now, suppose we have outlier samples mistakenly labeled as target class samples or samples from the target class affected by noise, changing their position. These samples negatively impact the classifier’s boundary. To address this issue, the inequality constraints can be relaxed, allowing noisy or outlier samples to be excluded from the hypersphere.</p>

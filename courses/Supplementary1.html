@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pattern Recognition &#8212; Dr.Hadi Sadoghi Yazdi</title>
+    <title>Supplementary Documents &#8212; Dr.Hadi Sadoghi Yazdi</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/pattern_recognition';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/Supplementary1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction" href="PR/Introduction/PR_intro.html" />
-    <link rel="prev" title="Courses" href="../Courses.html" />
+    <link rel="next" title="Eigen Value Decomposition" href="SupplementaryDocuments/EVD.html" />
+    <link rel="prev" title="Autoencoders" href="ML/FeatureReduction/Autoencoders1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +181,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Courses.html">Courses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Pattern Recognition</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pattern_recognition.html">Pattern Recognition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="PR/Introduction/PR_intro.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="PR/Introduction/DataSet.html">Dataset</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PR/Introduction/Model.html">Model</a></li>
@@ -229,7 +229,10 @@
 <li class="toctree-l3"><a class="reference internal" href="ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="Supplementary1.html">Supplementary for PR</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Supplementary Documents</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="filtering_algorithms.html">Filtering Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signal_processing.html">Signal Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image_processing.html">Image Processing</a></li>
@@ -317,7 +320,7 @@
       
       
       
-      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/pattern_recognition.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/Supplementary1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +350,7 @@
       
       
       
-      <li><a href="../_sources/courses/pattern_recognition.ipynb" target="_blank"
+      <li><a href="../_sources/courses/Supplementary1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,9 +421,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -431,19 +432,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pattern Recognition</h1>
+    <h1>Supplementary Documents</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections-of-pattern-recognition">Sections of Pattern Recognition</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -453,25 +446,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pattern-recognition">
-<h1>Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Link to this heading">#</a></h1>
-<!-- ![Pattern](PR.JPG) -->
-<!-- <img src="PR1.jpg" alt="Pattern Recognition" width="150" height="150"> -->
-<p><img alt="Pattern Recognition" src="../_images/PR1.jpg" /></p>
-<p><strong>PR</strong> is a field of study focused on identifying patterns and trends within data to make informed decisions.
-In this course, students will learn how PR techniques are used in various applications such as image and text recognition. By mastering PR algorithms, students will gain valuable skills in data analysis and decision-making processes.</p>
-<section id="sections-of-pattern-recognition">
-<h2>Sections of Pattern Recognition<a class="headerlink" href="#sections-of-pattern-recognition" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="supplementary-documents">
+<h1>Supplementary Documents<a class="headerlink" href="#supplementary-documents" title="Link to this heading">#</a></h1>
+<p>In this section, we provide additional resources and mathematical foundations crucial for understanding and applying pattern recognition techniques. Some of topics are covered:</p>
+<ol class="arabic simple">
+<li><p><strong>Eigenvalue Decomposition</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="PR/Introduction/PR_intro.html"><span class="std std-doc">Introduction of Pattern Recognition</span></a></p></li>
-<li><p><a class="reference internal" href="PR/Visualization/PR_intro_Visualization.html"><span class="std std-doc">Data Visualization</span></a></p></li>
-<li><p><a class="reference internal" href="PR/Clustering/PR_intro_Clustering.html"><span class="std std-doc">Clustering</span></a></p></li>
-<li><p><a class="reference internal" href="PR/Regression/Introduction_Regression.html"><span class="std std-doc">Regression</span></a></p></li>
-<li><p><a class="reference internal" href="PR/Classification/PR_intro_Classification.html"><span class="std std-doc">Classification</span></a></p></li>
+<li><p>Understanding the decomposition of matrices into eigenvalues and eigenvectors and its applications in pattern recognition.</p></li>
 </ul>
-<p>We follow remaining contents in <strong>Machine Learning</strong> include:
-Feature Reduction, kernel regression, gaussian process, ensemble learning, federated learning, diffusion network, active learning, contrastive learning, on-line learning, deep learning, …</p>
-</section>
+</li>
+<li><p><strong>Convex Programming</strong></p>
+<ul class="simple">
+<li><p><strong>Linear Programming</strong>: Optimization techniques for linear objective functions subject to linear constraints.</p></li>
+<li><p><strong>Quadratic Programming</strong>: Optimization involving quadratic objective functions with linear constraints.</p></li>
+</ul>
+</li>
+<li><p><strong>Singular Value Decomposition (SVD)</strong></p>
+<ul class="simple">
+<li><p>Decomposition of matrices and its use in dimensionality reduction and feature extraction.</p></li>
+</ul>
+</li>
+<li><p><strong>Optimization Algorithms</strong></p>
+<ul class="simple">
+<li><p>Techniques for solving optimization problems, including gradient descent and more advanced methods.</p></li>
+</ul>
+</li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -507,20 +507,20 @@ Feature Reduction, kernel regression, gaussian process, ensemble learning, feder
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Courses.html"
+       href="ML/FeatureReduction/Autoencoders1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Courses</p>
+        <p class="prev-next-title">Autoencoders</p>
       </div>
     </a>
     <a class="right-next"
-       href="PR/Introduction/PR_intro.html"
+       href="SupplementaryDocuments/EVD.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Eigen Value Decomposition</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -530,21 +530,6 @@ Feature Reduction, kernel regression, gaussian process, ensemble learning, feder
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sections-of-pattern-recognition">Sections of Pattern Recognition</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
