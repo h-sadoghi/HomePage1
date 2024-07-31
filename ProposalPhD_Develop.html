@@ -57,10 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ProposalPhD_Develop';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Students Works" href="Students.html" />
+    <link rel="next" title="Students Projects" href="Students.html" />
     <link rel="prev" title="Pattern Lab Production" href="PRLabProduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -205,8 +207,17 @@
 <li class="toctree-l4"><a class="reference internal" href="courses/PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="courses/PR/Classification/PR_intro_Classification.html">Classification</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="courses/PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l3 has-children"><a class="reference internal" href="courses/PR/Classification/PR_intro_Classification.html">Classification</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/Classification/SVDD.html">Support Vector Data Description (SVDD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="courses/PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="courses/PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
 </ul>
 </details></li>
 </ul>
@@ -220,6 +231,12 @@
 <li class="toctree-l3"><a class="reference internal" href="courses/ML/FeatureReduction/Autoencoders1.html">Autoencoders</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="courses/Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="courses/SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="courses/SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="courses/SupplementaryDocuments/Covariance1.html">Covariance</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="courses/filtering_algorithms.html">Filtering Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="courses/signal_processing.html">Signal Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="courses/image_processing.html">Image Processing</a></li>
@@ -230,7 +247,10 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Proposal PhD Develope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Students.html">Students Works</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Students.html">Students Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="StudentProjects/BsC/Teymoori/chat_with_doc.html">Author Information</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="Contact_Me.html">Contact Me</a></li>
 <li class="toctree-l1"><a class="reference internal" href="About_Me.html">About Me</a></li>
 </ul>
@@ -429,6 +449,28 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indoor-positioning">Indoor positioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding">Unmanifolding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold-representation">Manifold Representation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding-concept">Unmanifolding Concept</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-one-way-for-unmanifolding">Introducing one way for unmanifolding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neighborhood-graph">Neighborhood Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-position-matrices-m-i">Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-embedding-coordinate-matrices-phi-i">Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-matrix-k">4. Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding-with-neighborhood-graph-and-kernel-matrix">Unmanifolding with Neighborhood Graph and Kernel Matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neighborhood Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -465,6 +507,109 @@ document.write(`
 <li><p><strong>Emergency Response</strong>: Locating people in need of assistance during emergencies.</p></li>
 <li><p><strong>Smart Buildings</strong>: Enhancing building automation and improving energy efficiency.</p></li>
 </ul>
+</section>
+<section id="unmanifolding">
+<h2>Unmanifolding<a class="headerlink" href="#unmanifolding" title="Link to this heading">#</a></h2>
+<section id="problem-statement">
+<h3>Problem Statement<a class="headerlink" href="#problem-statement" title="Link to this heading">#</a></h3>
+<p>Given a dataset <span class="math notranslate nohighlight">\( \{(\mathbf{x}_i, y_i)\}_{i=1}^N \)</span> where <span class="math notranslate nohighlight">\( \mathbf{x}_i \in \mathbb{R}^d \)</span> and <span class="math notranslate nohighlight">\( y_i \in \mathbb{R} \)</span>, the goal is to predict <span class="math notranslate nohighlight">\( y \)</span> from <span class="math notranslate nohighlight">\( \mathbf{x} \)</span>. If the data lies on a non-linear manifold <span class="math notranslate nohighlight">\( \mathcal{M} \)</span> in the input space, directly applying regression can lead to suboptimal results because models may cannot capture the non-linear relationships such as swiss roll.</p>
+<p><img alt="SwissRoll" src="_images/Swissroll.png" /></p>
+</section>
+<section id="manifold-representation">
+<h3>Manifold Representation<a class="headerlink" href="#manifold-representation" title="Link to this heading">#</a></h3>
+<p>A non-linear manifold <span class="math notranslate nohighlight">\( \mathcal{M} \)</span> can be represented as a smooth, continuous surface embedded in a higher-dimensional space <span class="math notranslate nohighlight">\( \mathbb{R}^d \)</span>. Mathematically, a point on the manifold can be described as <span class="math notranslate nohighlight">\( \mathbf{x} = \phi(\mathbf{z}) \)</span>, where <span class="math notranslate nohighlight">\( \mathbf{z} \in \mathbb{R}^m \)</span> with <span class="math notranslate nohighlight">\( m &lt; d \)</span> and <span class="math notranslate nohighlight">\( \phi \)</span> is a smooth mapping function.</p>
+<section id="unmanifolding-concept">
+<h4>Unmanifolding Concept<a class="headerlink" href="#unmanifolding-concept" title="Link to this heading">#</a></h4>
+<p>The process of unmanifolding involves transforming the data from the non-linear manifold <span class="math notranslate nohighlight">\( \mathcal{M} \)</span> to a linear space <span class="math notranslate nohighlight">\( \mathcal{Z} \)</span> where linear regression can be effectively applied. This transformation can be expressed as a function <span class="math notranslate nohighlight">\( \psi \)</span> such that:
+$<span class="math notranslate nohighlight">\( \mathbf{z} = \psi(\mathbf{x}) \)</span><span class="math notranslate nohighlight">\(
+where \)</span> \mathbf{z} \in \mathbb{R}^m $ is the transformed feature space.</p>
+<p><strong>Mapping to the Manifold</strong>:
+$<span class="math notranslate nohighlight">\( \mathbf{x} = \phi(\mathbf{z}) \)</span><span class="math notranslate nohighlight">\(
+   where \)</span> \phi $ is the mapping from the lower-dimensional latent space to the high-dimensional observation space.</p>
+<p><strong>Inverse Mapping (Unmanifolding)</strong>:
+$<span class="math notranslate nohighlight">\( \mathbf{z} = \psi(\mathbf{x}) \)</span><span class="math notranslate nohighlight">\(
+   where \)</span> \psi $ is the inverse mapping or feature extraction function that projects the data back to the lower-dimensional latent space.</p>
+</section>
+</section>
+</section>
+<section id="introducing-one-way-for-unmanifolding">
+<h2>Introducing one way for unmanifolding<a class="headerlink" href="#introducing-one-way-for-unmanifolding" title="Link to this heading">#</a></h2>
+<section id="neighborhood-graph">
+<h3>Neighborhood Graph<a class="headerlink" href="#neighborhood-graph" title="Link to this heading">#</a></h3>
+<p>Local geometry of the data can be captured using the neighborhood graph. For each data point <span class="math notranslate nohighlight">\(x_i \in D\)</span>, its neighbors <span class="math notranslate nohighlight">\(N_i\)</span> are those within a specified radius <span class="math notranslate nohighlight">\(r_N\)</span>. This graph structure encodes topological information about the dataset:</p>
+<div class="math notranslate nohighlight">
+\[
+N_i = \{i' \in [n] \mid \|x_{i'} - x_i\| \le r_N\}
+\]</div>
+</section>
+<section id="local-position-matrices-m-i">
+<h3>Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span><a class="headerlink" href="#local-position-matrices-m-i" title="Link to this heading">#</a></h3>
+<p>These matrices <span class="math notranslate nohighlight">\(M_i\)</span> contain the neighbors of each data point <span class="math notranslate nohighlight">\(x_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ M_i = [x_{i'} : i' \in N_i] \in \mathbb{R}^{k_i \times D} \]</div>
+<p>This matrice provide the local geometry around each point <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+</section>
+<section id="local-embedding-coordinate-matrices-phi-i">
+<h3>Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span><a class="headerlink" href="#local-embedding-coordinate-matrices-phi-i" title="Link to this heading">#</a></h3>
+<p>The local embedding matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span> map the local neighbors into a lower-dimensional space:</p>
+<div class="math notranslate nohighlight">
+\[ \Phi_i = [\phi(x_{i'}) : i' \in N_i] \in \mathbb{R}^{k_i \times m} \]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\phi\)</span> is an embedding function that reduces the dimensionality while preserving the local structure. This step is critical in unmanifolding, as it helps to transform the non-linear manifold into a more linear representation.</p>
+</section>
+<section id="kernel-matrix-k">
+<h3>4. Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span><a class="headerlink" href="#kernel-matrix-k" title="Link to this heading">#</a></h3>
+<p>The pairwise similarities between data points stored in the kernel matrix <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} K_{i,i'} = 
+\begin{cases}
+\exp \left(-\frac{\|x_i - x_{i'}\|^2}{2\gamma_N^2}\right) &amp; \text{if } i' \in N_i \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+</section>
+</section>
+<section id="unmanifolding-with-neighborhood-graph-and-kernel-matrix">
+<h2>Unmanifolding with Neighborhood Graph and Kernel Matrix<a class="headerlink" href="#unmanifolding-with-neighborhood-graph-and-kernel-matrix" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Neighborhood Graph<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The neighborhood graph captures the local geometry of the data. For each data point <span class="math notranslate nohighlight">\(x_i \in D\)</span>, its neighbors <span class="math notranslate nohighlight">\(N_i\)</span> are defined as those within a specified radius <span class="math notranslate nohighlight">\(r_N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+N_i = \{i' \in [n] \mid \|x_{i'} - x_i\| \le r_N\}
+\]</div>
+<p>This graph encodes topological information about the dataset, preserving the local structure and relationships between data points.</p>
+</section>
+<section id="id2">
+<h3>Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The local position matrices <span class="math notranslate nohighlight">\(M_i\)</span> contain the samples of the neighbors of each data point <span class="math notranslate nohighlight">\(x_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+M_i = [x_{i'} : i' \in N_i] \in \mathbb{R}^{k_i \times D}
+\]</div>
+<p>These matrices represent the local geometry around each point <span class="math notranslate nohighlight">\(x_i\)</span>, effectively capturing the local patch of the manifold.</p>
+</section>
+<section id="id3">
+<h3>Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The local embedding matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span> map the local neighbors into a lower-dimensional space:</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi_i = [\phi(x_{i'}) : i' \in N_i] \in \mathbb{R}^{k_i \times m}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\phi\)</span> is an embedding function that reduces the dimensionality while preserving the local structure. This step is critical for unmanifolding, as it transforms the non-linear manifold into a more linear representation.</p>
+</section>
+<section id="id4">
+<h3>Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>The kernel matrix <span class="math notranslate nohighlight">\(K\)</span> encodes the pairwise similarities between data points:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+K_{i,i'} = 
+\begin{cases}
+\exp \left(-\frac{\|x_i - x_{i'}\|^2}{2\gamma_N^2}\right) &amp; \text{if } i' \in N_i \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\gamma_N\)</span> is the bandwidth parameter, often related to the neighborhood radius <span class="math notranslate nohighlight">\(r_N\)</span> by <span class="math notranslate nohighlight">\(r_N = c \gamma_N\)</span> with <span class="math notranslate nohighlight">\(c\)</span> being a small constant greater than 1. This relationship ensures that the entries in <span class="math notranslate nohighlight">\(K\)</span> that are zeroed out are small, maintaining the matrix’s sparsity.</p>
+</section>
 </section>
 </section>
 
@@ -512,7 +657,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Students Works</p>
+        <p class="prev-next-title">Students Projects</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -533,6 +678,28 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indoor-positioning">Indoor positioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding">Unmanifolding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold-representation">Manifold Representation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding-concept">Unmanifolding Concept</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-one-way-for-unmanifolding">Introducing one way for unmanifolding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neighborhood-graph">Neighborhood Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-position-matrices-m-i">Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-embedding-coordinate-matrices-phi-i">Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-matrix-k">4. Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmanifolding-with-neighborhood-graph-and-kernel-matrix">Unmanifolding with Neighborhood Graph and Kernel Matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neighborhood Graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Local Position Matrices <span class="math notranslate nohighlight">\(M_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Local Embedding Coordinate Matrices <span class="math notranslate nohighlight">\(\Phi_i\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Kernel Matrix <span class="math notranslate nohighlight">\(K\)</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

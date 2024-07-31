@@ -234,6 +234,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../filtering_algorithms.html">Filtering Algorithms</a></li>
@@ -471,8 +472,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fihser-classifier">
 <h1>Fihser Classifier<a class="headerlink" href="#fihser-classifier" title="Link to this heading">#</a></h1>
 <p><strong>Provided by Javad Saghi</strong></p>
-<p>Contact: Telegram: &#64;Kurosh47</p>
-<p><img alt="Saghi" src="../../../_images/Saghi_pic.png" /></p>
+<p>Contact: <a class="reference external" href="mailto:jav&#46;saghi&#37;&#52;&#48;gmail&#46;com">jav<span>&#46;</span>saghi<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 <p>The Fisher classifier, often referred to as Fisher’s Linear Discriminant (FLD) or Linear Discriminant Analysis (LDA), is a method used in statistics, pattern recognition, and machine learning to find a linear combination of features that characterizes or separates two or more classes of objects or events.</p>
 <p>Consider a binary classification problem with two classes: <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span>​. Each sample <span class="math notranslate nohighlight">\(x\)</span> belongs to one of  these classes. We aim to find a projection vector <span class="math notranslate nohighlight">\(w\)</span> such that the projection of samples onto this vector maximizes the seperation between the two classes. as following image:</p>
 <p><img alt="'Fisher'" src="../../../_images/Fisher_Classifier.png" /></p>
@@ -592,7 +592,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7affe252188b308fb2e13e7aecdd43ba63f964b0add07ee2a54e7d78d50ebe4e.png" src="../../../_images/7affe252188b308fb2e13e7aecdd43ba63f964b0add07ee2a54e7d78d50ebe4e.png" />
+<img alt="../../../_images/25fe1d2d375c91da5d79dd7df14afcbbe57f6044f060b68ddf5ed5d478e96124.png" src="../../../_images/25fe1d2d375c91da5d79dd7df14afcbbe57f6044f060b68ddf5ed5d478e96124.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -618,7 +618,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/73ed4a7d8006c899c1717f6d4025c037715aaa16f91149d56846c56dd4206c68.png" src="../../../_images/73ed4a7d8006c899c1717f6d4025c037715aaa16f91149d56846c56dd4206c68.png" />
+<img alt="../../../_images/72eb6c7e44ece5d6a6136657314d0d4f994282375d43ca86274d765225133a5a.png" src="../../../_images/72eb6c7e44ece5d6a6136657314d0d4f994282375d43ca86274d765225133a5a.png" />
 </div>
 </div>
 </section>
@@ -643,11 +643,11 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x236240b4800&gt;,
- &lt;matplotlib.lines.Line2D at 0x236240b4bf0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1dbd70c0470&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1dbdae932f0&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/d25ae812f17bce47eeb6d8e0cedd8dcab1b32127db392afad8da9b79fb7bfc22.png" src="../../../_images/d25ae812f17bce47eeb6d8e0cedd8dcab1b32127db392afad8da9b79fb7bfc22.png" />
+<img alt="../../../_images/e81b0eaef2727ee913c1b56d338a472db7fcd476f98d55f38a658e5723e74f91.png" src="../../../_images/e81b0eaef2727ee913c1b56d338a472db7fcd476f98d55f38a658e5723e74f91.png" />
 </div>
 </div>
 </section>
@@ -665,7 +665,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9754848903010089
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08537903064297003
 </pre></div>
 </div>
 </div>
@@ -713,12 +713,12 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w: 
-[-0.96950544  0.24506979]
+[-0.14132787 -0.98996284]
 b: 
-0.9754848903010089
+0.08537903064297003
 </pre></div>
 </div>
-<img alt="../../../_images/68c2fc93c5c2e9d389e5f3057abdafcdfe82cd91659bbe88dc008fe673f39c48.png" src="../../../_images/68c2fc93c5c2e9d389e5f3057abdafcdfe82cd91659bbe88dc008fe673f39c48.png" />
+<img alt="../../../_images/8c7e9b8b6b9b741653a4432f8fc63a793d03f3b4f2cd3eb906449449fe55c633.png" src="../../../_images/8c7e9b8b6b9b741653a4432f8fc63a793d03f3b4f2cd3eb906449449fe55c633.png" />
 </div>
 </div>
 </section>
