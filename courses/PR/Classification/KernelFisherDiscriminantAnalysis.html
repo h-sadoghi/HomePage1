@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/Classification/KernelFisherDiscriminantAnalysis';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Bayes Estimation" href="../BayesEstimation/BayesEstimation.html" />
+    <link rel="next" title="Project Induction in Decision Trees" href="DecisionTree1.html" />
     <link rel="prev" title="Fihser Classifier" href="Fisherclassifier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +193,10 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../Clustering/Clustering_1.html">Clustering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -212,6 +216,7 @@
 <li class="toctree-l4"><a class="reference internal" href="SVM1.html">Support Vector Machine (SVM)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Fisherclassifier.html">Fihser Classifier</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DecisionTree1.html">Project Induction in Decision Trees</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -234,6 +239,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../Supplementary1.html">Supplementary Documents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/EVD.html">Eigen Value Decomposition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/twin_svm.html">Twin SVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../filtering_algorithms.html">Filtering Algorithms</a></li>
@@ -448,7 +454,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-classes">Two classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-module-kfda">Create Module kfda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear"><strong>Linear</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial"><strong>polynomial</strong></a></li>
@@ -470,9 +475,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kernel-fisher-discriminant-analysis">
 <h1>Kernel Fisher Discriminant Analysis<a class="headerlink" href="#kernel-fisher-discriminant-analysis" title="Link to this heading">#</a></h1>
-<p><strong>Provided by Motahare Namakin</strong></p>
-<p><strong>Contact : Telegram:  &#64;nmkin_motahare</strong></p>
+<p><strong>Provided by</strong></p>
+<ul class="simple">
+<li><p>Motahare Namakin <strong>Contact : <a class="reference external" href="mailto:Motahare&#46;namakin&#37;&#52;&#48;gmail&#46;com">Motahare<span>&#46;</span>namakin<span>&#64;</span>gmail<span>&#46;</span>com</a></strong></p></li>
+</ul>
 <p><img alt="Motahare" src="../../../_images/Namakin.PNG" /></p>
+<ul class="simple">
+<li><p>Farkhondeh Arazi <strong>Contact : <a class="reference external" href="mailto:farkhondeh&#46;arzi&#37;&#52;&#48;gmail&#46;com">farkhondeh<span>&#46;</span>arzi<span>&#64;</span>gmail<span>&#46;</span>com</a></strong></p></li>
+</ul>
+<p><img alt="Arazi" src="../../../_images/FarkhondehArazi.jpg" /></p>
 <p>KFDA is an extension of Fisher Discriminant Analysis (FDA) that works in a high-dimensional feature space induced by a kernel function. It is particularly useful for non-linear classification problems where the linear decision boundary of FDA is insufficient.</p>
 <section id="two-classes">
 <h2>Two classes<a class="headerlink" href="#two-classes" title="Link to this heading">#</a></h2>
@@ -639,37 +650,6 @@ N=\left[ \sum\limits_{j=1,2}^{}\left( K_jK_j^T-K_j1_{n_j}K_j^T \right) \right]\)
   <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Feature 2&#39;</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kernel Fisher Discriminator Analysis with Gaussian (rbf) Kernel for Two Moons Dataset&#39;</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="solve">
-<h2>solve<a class="headerlink" href="#solve" title="Link to this heading">#</a></h2>
-<p><strong>MA = NA</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">solve_ma_eq_na_iterative</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Assuming M and N are square matrices of size n x n</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>  <span class="c1"># Initial guess for A</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iterations</span><span class="p">):</span>
-        <span class="n">MA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
-        <span class="n">NA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
-        <span class="n">residual</span> <span class="o">=</span> <span class="n">MA</span> <span class="o">-</span> <span class="n">NA</span>
-
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Converged after </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> iterations&quot;</span><span class="p">)</span>
-            <span class="k">break</span>
-
-        <span class="n">A</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">residual</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Iterative method did not converge within the specified number of iterations.&quot;</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">A</span>
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1278,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
@@ -1727,7 +1707,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
@@ -1745,7 +1725,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
@@ -2174,7 +2154,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
@@ -2257,7 +2237,7 @@ trace(A^TNA)\cdot MA=trace(A^TMA)\cdot NA\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d8259368a6679a88c59e0f26fe8215ff2510c015a6fb574b70301e50c1180687.png" src="../../../_images/d8259368a6679a88c59e0f26fe8215ff2510c015a6fb574b70301e50c1180687.png" />
+<img alt="../../../_images/dbd5a2c3adc78516f4237355c7ed4f03f22073200780741529411568eccf47bc.png" src="../../../_images/dbd5a2c3adc78516f4237355c7ed4f03f22073200780741529411568eccf47bc.png" />
 </div>
 </div>
 </section>
@@ -2684,7 +2664,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.6806666666666666
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.682
 </pre></div>
 </div>
 </div>
@@ -2696,7 +2676,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/491645f79870914a8f24fc178fefd1e958493aa209c05d146a714cd631152cd4.png" src="../../../_images/491645f79870914a8f24fc178fefd1e958493aa209c05d146a714cd631152cd4.png" />
+<img alt="../../../_images/e260de5638dab19c6a54f82df528e04108909c9bff884b8db87344b8f226af23.png" src="../../../_images/e260de5638dab19c6a54f82df528e04108909c9bff884b8db87344b8f226af23.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3120,7 +3100,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.8013333333333333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.8046666666666666
 </pre></div>
 </div>
 </div>
@@ -3132,7 +3112,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/ba57f854c3245e0832734d0f8d36ab6e4d1a4b233815cdab4c8108f8ba589229.png" src="../../../_images/ba57f854c3245e0832734d0f8d36ab6e4d1a4b233815cdab4c8108f8ba589229.png" />
+<img alt="../../../_images/ebb1908014011f4e14b637917e076c800672ae4d7494e294c060c4f5eb5d16da.png" src="../../../_images/ebb1908014011f4e14b637917e076c800672ae4d7494e294c060c4f5eb5d16da.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3143,7 +3123,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
@@ -3560,7 +3540,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.8013333333333333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.8046666666666666
 </pre></div>
 </div>
 </div>
@@ -3572,11 +3552,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_6392\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Dr\AppData\Local\Temp\ipykernel_10168\3548760067.py:29: UserWarning: n_components &gt; classes_.size - 1.Only the first classes_.size - 1 components will be valid.
   warnings.warn(
 </pre></div>
 </div>
-<img alt="../../../_images/ba57f854c3245e0832734d0f8d36ab6e4d1a4b233815cdab4c8108f8ba589229.png" src="../../../_images/ba57f854c3245e0832734d0f8d36ab6e4d1a4b233815cdab4c8108f8ba589229.png" />
+<img alt="../../../_images/ebb1908014011f4e14b637917e076c800672ae4d7494e294c060c4f5eb5d16da.png" src="../../../_images/ebb1908014011f4e14b637917e076c800672ae4d7494e294c060c4f5eb5d16da.png" />
 </div>
 </div>
 </section>
@@ -4003,7 +3983,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9033333333333333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9046666666666666
 </pre></div>
 </div>
 </div>
@@ -4015,7 +3995,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/85bc03319aa5f3e401728213da083d12e3b0af43ca19cda135ab139260cedaba.png" src="../../../_images/85bc03319aa5f3e401728213da083d12e3b0af43ca19cda135ab139260cedaba.png" />
+<img alt="../../../_images/715a97e9d1b39873a220baf6175a2527fe6bb920c43e856a73705c6e89f1af1f.png" src="../../../_images/715a97e9d1b39873a220baf6175a2527fe6bb920c43e856a73705c6e89f1af1f.png" />
 </div>
 </div>
 </section>
@@ -4442,7 +4422,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9646666666666667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.9666666666666667
 </pre></div>
 </div>
 </div>
@@ -4454,7 +4434,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/86f783c276816a36754dfc6401521a458e8466d4e6c8d3712a9cbdbc3ae05e7c.png" src="../../../_images/86f783c276816a36754dfc6401521a458e8466d4e6c8d3712a9cbdbc3ae05e7c.png" />
+<img alt="../../../_images/1833732b127ed95c0cdb773d987459682f1dcb81c4effa0eed5a4cf324efd062.png" src="../../../_images/1833732b127ed95c0cdb773d987459682f1dcb81c4effa0eed5a4cf324efd062.png" />
 </div>
 </div>
 </section>
@@ -4500,11 +4480,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
       </div>
     </a>
     <a class="right-next"
-       href="../BayesEstimation/BayesEstimation.html"
+       href="DecisionTree1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bayes Estimation</p>
+        <p class="prev-next-title">Project Induction in Decision Trees</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -4525,7 +4505,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-classes">Two classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-module-kfda">Create Module kfda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear"><strong>Linear</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial"><strong>polynomial</strong></a></li>
