@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Clustering Concept &#8212; Dr.Hadi Sadoghi Yazdi</title>
+    <title>Project Linkage clustering &#8212; Dr.Hadi Sadoghi Yazdi</title>
   
   
   
@@ -57,13 +57,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/Clustering/PR_intro_Clustering';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'courses/PR/Clustering/LinkageClustering_1';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Clustering" href="Clustering_1.html" />
-    <link rel="prev" title="Visualization" href="../Visualization/PR_intro_Visualization.html" />
+    <link rel="next" title="Project \( \epsilon \) -insensitive Linkage" href="e_insensitive_linkage.html" />
+    <link rel="prev" title="Complementary of FCM" href="FCM_Saghi_Project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,11 +188,11 @@
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../Visualization/PR_intro_Visualization.html">Visualization</a></li>
-<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Clustering Concept</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="PR_intro_Clustering.html">Clustering Concept</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Clustering_1.html">Clustering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="FCM_Saghi_Project.html">Complementary of FCM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Project Linkage clustering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
 </ul>
@@ -329,7 +327,7 @@
       
       
       
-      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/PR/Clustering/PR_intro_Clustering.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/h-sadoghi/dr-sadoghi.git/issues/new?title=Issue%20on%20page%20%2Fcourses/PR/Clustering/LinkageClustering_1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +357,7 @@
       
       
       
-      <li><a href="../../../_sources/courses/PR/Clustering/PR_intro_Clustering.ipynb" target="_blank"
+      <li><a href="../../../_sources/courses/PR/Clustering/LinkageClustering_1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -443,7 +441,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Clustering Concept</h1>
+    <h1>Project Linkage clustering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -453,16 +451,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-of-data-calculation">Index of Data Calculation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-of-data">Mean of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-of-data">Variance of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#center-of-data">Center of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-data-description">Support Vector Data Description</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkage-clustering">Linkage clustering</a></li>
 </ul>
             </nav>
         </div>
@@ -474,52 +463,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="clustering-concept">
-<h1>Clustering Concept<a class="headerlink" href="#clustering-concept" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>From now on, all issues will be presented from the perspective of minimizing the cost function. Therefore, the method of solution, the application of data for learning, the learning rule, and the type of model will be explained in the context of the cost function. We will place greater emphasis on the cost function.</p>
-<!-- <\a #item-0\>
-<a href="#item-0">Link Text</a> -->
-<section id="index-of-data-calculation">
-<h3>Index of Data Calculation<a class="headerlink" href="#index-of-data-calculation" title="Link to this heading">#</a></h3>
-<p>In the field of data analysis and pattern recognition, the term “Index of Data Calculation” refers to various statistical and mathematical indices used to describe and summarize datasets. These indices help in understanding the distribution, central tendency, and variability of the data. This chapter will cover key indices such as the mean, variance, and other measures like the center and support vector data description.</p>
-<section id="mean-of-data">
-<h4>Mean of Data<a class="headerlink" href="#mean-of-data" title="Link to this heading">#</a></h4>
-<p>The mean, often referred to as the average, is a measure of the central tendency of a dataset. It is calculated by summing all the data points and dividing by the number of points. The mean provides a single value that represents the center of the data distribution.</p>
-<div class="math notranslate nohighlight">
-\[
-\mu = \frac{1}{n} \sum_{i=1}^{n} x_i
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of data points, and <span class="math notranslate nohighlight">\(x_i\)</span> represents each data point.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="project-linkage-clustering">
+<h1>Project Linkage clustering<a class="headerlink" href="#project-linkage-clustering" title="Link to this heading">#</a></h1>
+<p><strong>This project is worth 2 points out of 20</strong></p>
+<p>Complete with details and corrections in native English. Additionally, include any necessary innovations for improvement.</p>
+<section id="linkage-clustering">
+<h2>Linkage clustering<a class="headerlink" href="#linkage-clustering" title="Link to this heading">#</a></h2>
+<p>Linkage clustering groups similar objects into clusters based on distances. It starts with each object as its own cluster and iteratively merges the closest pairs using criteria like single, complete, or average linkage. The process is visualized with a dendrogram, showing the hierarchy of clusters.</p>
 </section>
-<section id="variance-of-data">
-<h4>Variance of Data<a class="headerlink" href="#variance-of-data" title="Link to this heading">#</a></h4>
-<p>Variance measures the spread or dispersion of the data points around the mean. It provides insight into how much the data varies. A higher variance indicates that the data points are more spread out from the mean.</p>
-<div class="math notranslate nohighlight">
-\[ \text{Variance} (\sigma^2) = \frac{1}{n} \sum_{i=1}^{n} (x_i - \mu)^2 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the mean of the data.</p>
-</section>
-<section id="center-of-data">
-<h4>Center of Data<a class="headerlink" href="#center-of-data" title="Link to this heading">#</a></h4>
-<p>The center of the data can also be represented using other measures like the median and mode:</p>
-<ul class="simple">
-<li><p><strong>Median</strong>: The middle value when the data points are arranged in ascending order. If the number of data points is even, the median is the average of the two middle values.</p></li>
-<li><p><strong>Mode</strong>: The value that appears most frequently in the dataset.</p></li>
-</ul>
-</section>
-<section id="support-vector-data-description">
-<h4>Support Vector Data Description<a class="headerlink" href="#support-vector-data-description" title="Link to this heading">#</a></h4>
-<p>Support Vector Data Description (SVDD) is a technique used in machine learning to describe the boundary of a dataset. It is particularly useful for anomaly detection and classification. SVDD creates a sphere that encompasses most of the data points, with support vectors lying on the boundary.</p>
-<ul class="simple">
-<li><p><strong>Support Vectors</strong>: These are the data points that lie on the boundary of the sphere and are crucial for defining the shape and position of the boundary.</p></li>
-<li><p><strong>Radius and Center</strong>: The radius of the sphere and its center are determined during the training process to best fit the data.</p></li>
-</ul>
-</section>
-</section>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -553,20 +504,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Visualization/PR_intro_Visualization.html"
+       href="FCM_Saghi_Project.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Visualization</p>
+        <p class="prev-next-title">Complementary of FCM</p>
       </div>
     </a>
     <a class="right-next"
-       href="Clustering_1.html"
+       href="e_insensitive_linkage.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Clustering</p>
+        <p class="prev-next-title">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -586,16 +537,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-of-data-calculation">Index of Data Calculation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-of-data">Mean of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-of-data">Variance of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#center-of-data">Center of Data</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-data-description">Support Vector Data Description</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkage-clustering">Linkage clustering</a></li>
 </ul>
   </nav></div>
 
