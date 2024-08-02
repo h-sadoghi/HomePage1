@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'courses/SupplementaryDocuments/Covariance1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Filtering Algorithms" href="../filtering_algorithms.html" />
+    <link rel="next" title="Circuit and Electronics" href="../CircuitElectronicAnalysis.html" />
     <link rel="prev" title="Twin SVM" href="twin_svm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +193,10 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Clustering/PR_intro_Clustering.html">Clustering Concept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/Clustering_1.html">Clustering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_1.html">k-means and fuzzy-c-means clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/FCM_Saghi_Project.html">Complementary of FCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/LinkageClustering_1.html">Project Linkage clustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/e_insensitive_linkage.html">Project <span class="math notranslate nohighlight">\( \epsilon \)</span> -insensitive Linkage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Clustering/SOFM_Project.html">Project Title: Self-Organizing Feature Map (SOFM)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../PR/Regression/Introduction_Regression.html">Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -200,8 +204,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Linearization.html">Linearization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Kernel_for_Regression.html">Kernel method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Evaluation and Model Selection</a></li>
-
+<li class="toctree-l4"><a class="reference internal" href="../PR/Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/Solution_for_Regression.html">Solution Method</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
@@ -212,10 +215,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../PR/Classification/SVM1.html">Support Vector Machine (SVM)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Classification/Fisherclassifier.html">Fihser Classifier</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/Classification/KernelFisherDiscriminantAnalysis.html">Kernel Fisher Discriminant Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/Classification/DecisionTree1.html">Project Induction in Decision Trees</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../PR/BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PR/BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
 </ul>
@@ -237,7 +242,11 @@
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Covariance</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../filtering_algorithms.html">Filtering Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Circuit_Electronics/Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Circuit_Electronics/BasicElements.html">Basic component</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../image_processing.html">Image Processing</a></li>
 </ul>
@@ -673,14 +682,14 @@ C_{i,j} = \sigma(x_i, x_j)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generated Data Mean Vector:
-[2.97670863 4.97057843]
+[3.04726697 5.00601472]
 
 Generated Data Covariance Matrix:
-[[5.29670896 1.10391456]
- [1.10391456 1.03947282]]
+[[5.51484629 1.0856771 ]
+ [1.0856771  1.04657742]]
 </pre></div>
 </div>
-<img alt="../../_images/d8b4938219edbe28f743bbb1e3ee51f5b906142572ba43e03a8c824f42b12a69.png" src="../../_images/d8b4938219edbe28f743bbb1e3ee51f5b906142572ba43e03a8c824f42b12a69.png" />
+<a class="reference internal image-reference" href="../../_images/cb2bd1e9074b42852734ae4c66c8a424ca3146eb80f7e6af8bbdbabe45e4525b.png"><img alt="../../_images/cb2bd1e9074b42852734ae4c66c8a424ca3146eb80f7e6af8bbdbabe45e4525b.png" src="../../_images/cb2bd1e9074b42852734ae4c66c8a424ca3146eb80f7e6af8bbdbabe45e4525b.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
@@ -1039,8 +1048,8 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b66cb1aec69790b81d5fdcd5824ce9051816f91e0addf008aa97e9680240581e.png" src="../../_images/b66cb1aec69790b81d5fdcd5824ce9051816f91e0addf008aa97e9680240581e.png" />
-<img alt="../../_images/4a8d3ba4b0ef74f98dd10321f1880ab4c25f0a50340e70ff34304ab3500164d4.png" src="../../_images/4a8d3ba4b0ef74f98dd10321f1880ab4c25f0a50340e70ff34304ab3500164d4.png" />
+<a class="reference internal image-reference" href="../../_images/e439c28a7028200234adf9c8c759bb131f6dcb2d96ce247e863712bd01fd7c57.png"><img alt="../../_images/e439c28a7028200234adf9c8c759bb131f6dcb2d96ce247e863712bd01fd7c57.png" src="../../_images/e439c28a7028200234adf9c8c759bb131f6dcb2d96ce247e863712bd01fd7c57.png" style="width: 943px; height: 430px;" /></a>
+<a class="reference internal image-reference" href="../../_images/f250a0509701c39d6af35de9b5e7ed3374c600af8601605f635bcb34a0a02383.png"><img alt="../../_images/f250a0509701c39d6af35de9b5e7ed3374c600af8601605f635bcb34a0a02383.png" src="../../_images/f250a0509701c39d6af35de9b5e7ed3374c600af8601605f635bcb34a0a02383.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
@@ -1087,11 +1096,11 @@ $<span class="math notranslate nohighlight">\(
       </div>
     </a>
     <a class="right-next"
-       href="../filtering_algorithms.html"
+       href="../CircuitElectronicAnalysis.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Filtering Algorithms</p>
+        <p class="prev-next-title">Circuit and Electronics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

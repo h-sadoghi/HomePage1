@@ -204,8 +204,7 @@
 <li class="toctree-l4"><a class="reference internal" href="NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Linearization.html">Linearization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Kernel_for_Regression.html">Kernel method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="EvaluationModelSelection.html">Evaluation and Model Selection</a></li>
-
+<li class="toctree-l4"><a class="reference internal" href="EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Solution_for_Regression.html">Solution Method</a></li>
 <li class="toctree-l4"><a class="reference internal" href="TheoryRegression.html">Theoretical Aspects of Regression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
@@ -221,6 +220,7 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
 </ul>
@@ -242,7 +242,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../../filtering_algorithms.html">Filtering Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/BasicElements.html">Basic component</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../signal_processing.html">Signal Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../image_processing.html">Image Processing</a></li>
 </ul>
@@ -584,7 +588,7 @@ again review of all of work in pattern recognition, we try model data with linea
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/547266105d19e2d34a8880df0295a6d7b6b501b7333f984f30a2d62197e83a7e.png" src="../../../_images/547266105d19e2d34a8880df0295a6d7b6b501b7333f984f30a2d62197e83a7e.png" />
+<a class="reference internal image-reference" href="../../../_images/547266105d19e2d34a8880df0295a6d7b6b501b7333f984f30a2d62197e83a7e.png"><img alt="../../../_images/547266105d19e2d34a8880df0295a6d7b6b501b7333f984f30a2d62197e83a7e.png" src="../../../_images/547266105d19e2d34a8880df0295a6d7b6b501b7333f984f30a2d62197e83a7e.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <p>If we try fitting the linear model introduced in Linear Regression use the following code:</p>
@@ -617,7 +621,7 @@ again review of all of work in pattern recognition, we try model data with linea
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/01da1f150a4598cf231e35b4173090fb6881a7c5ed9c2fc11d52a0de2a300005.png" src="../../../_images/01da1f150a4598cf231e35b4173090fb6881a7c5ed9c2fc11d52a0de2a300005.png" />
+<a class="reference internal image-reference" href="../../../_images/01da1f150a4598cf231e35b4173090fb6881a7c5ed9c2fc11d52a0de2a300005.png"><img alt="../../../_images/01da1f150a4598cf231e35b4173090fb6881a7c5ed9c2fc11d52a0de2a300005.png" src="../../../_images/01da1f150a4598cf231e35b4173090fb6881a7c5ed9c2fc11d52a0de2a300005.png" style="width: 943px; height: 430px;" /></a>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope (Coefficient): 2.1499999999999995
 Intercept: 130.0
 </pre></div>
@@ -678,7 +682,7 @@ e=y-\hat{y}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/a705546186131b7bb973a2db8b5653218f5e90ead03f39fcc07d76a67ab961cd.png" src="../../../_images/a705546186131b7bb973a2db8b5653218f5e90ead03f39fcc07d76a67ab961cd.png" />
+<a class="reference internal image-reference" href="../../../_images/a705546186131b7bb973a2db8b5653218f5e90ead03f39fcc07d76a67ab961cd.png"><img alt="../../../_images/a705546186131b7bb973a2db8b5653218f5e90ead03f39fcc07d76a67ab961cd.png" src="../../../_images/a705546186131b7bb973a2db8b5653218f5e90ead03f39fcc07d76a67ab961cd.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <p>Each sample shows an error between the model and the main value in the dataset. These errors affect the parameters <span class="math notranslate nohighlight">\( w \)</span> and <span class="math notranslate nohighlight">\( b \)</span> in the equation <span class="math notranslate nohighlight">\( \hat{y}=w^{T}x+b \)</span>.</p>
@@ -921,7 +925,7 @@ w_{\text{OLS}} = (X^T X)^{-1} X^T Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/91fed7597205c2c9b5f007e1904e05ef3f104e304f3e628a2910a1c2a0079e32.png" src="../../../_images/91fed7597205c2c9b5f007e1904e05ef3f104e304f3e628a2910a1c2a0079e32.png" />
+<a class="reference internal image-reference" href="../../../_images/91fed7597205c2c9b5f007e1904e05ef3f104e304f3e628a2910a1c2a0079e32.png"><img alt="../../../_images/91fed7597205c2c9b5f007e1904e05ef3f104e304f3e628a2910a1c2a0079e32.png" src="../../../_images/91fed7597205c2c9b5f007e1904e05ef3f104e304f3e628a2910a1c2a0079e32.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <p>As we move the optimization point using a learning rule towards minimizing <span class="math notranslate nohighlight">\( J(w) \)</span>, it crosses the constraint <span class="math notranslate nohighlight">\( ||w||_2^2 \leqslant r \)</span> at the point shown in the above figure. This point represents the optimal value.Compare the two types of Ridge regression (using the L2 norm) and Lasso regression (using the L1 norm) in the following figure.
@@ -1122,7 +1126,7 @@ q (y - \hat{y}) &amp; \text{if} \ y \geq \hat{y} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/843fb734562d74df364b01292d63f347a6e5b3b5a791dc9e653667cb5bcb2e98.png" src="../../../_images/843fb734562d74df364b01292d63f347a6e5b3b5a791dc9e653667cb5bcb2e98.png" />
+<a class="reference internal image-reference" href="../../../_images/843fb734562d74df364b01292d63f347a6e5b3b5a791dc9e653667cb5bcb2e98.png"><img alt="../../../_images/843fb734562d74df364b01292d63f347a6e5b3b5a791dc9e653667cb5bcb2e98.png" src="../../../_images/843fb734562d74df364b01292d63f347a6e5b3b5a791dc9e653667cb5bcb2e98.png" style="width: 943px; height: 430px;" /></a>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error: 19.66467222387491
 </pre></div>
 </div>
@@ -1241,8 +1245,8 @@ q (y - \hat{y}) &amp; \text{if} \ y \geq \hat{y} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/675faa2716fb239c0bddbaf780fce8b3e38c11c9dcbde1e2eac0d184de87e093.png" src="../../../_images/675faa2716fb239c0bddbaf780fce8b3e38c11c9dcbde1e2eac0d184de87e093.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Weights: [-1.60306647e-142 -1.58291408e-143]
+<a class="reference internal image-reference" href="../../../_images/675faa2716fb239c0bddbaf780fce8b3e38c11c9dcbde1e2eac0d184de87e093.png"><img alt="../../../_images/675faa2716fb239c0bddbaf780fce8b3e38c11c9dcbde1e2eac0d184de87e093.png" src="../../../_images/675faa2716fb239c0bddbaf780fce8b3e38c11c9dcbde1e2eac0d184de87e093.png" style="width: 943px; height: 430px;" /></a>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Weights: [-2.38573536e-143 -7.70406551e-144]
 </pre></div>
 </div>
 </div>
@@ -1528,10 +1532,10 @@ A_{ub} \mathbf{x} \leq \mathbf{b}_{ub}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x299c3e25a00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1d275a4d7f0&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/4341f114d902eb7798cab97663f9f11e27ebfbac92d6f6c633e93bc6ca540b67.png" src="../../../_images/4341f114d902eb7798cab97663f9f11e27ebfbac92d6f6c633e93bc6ca540b67.png" />
+<a class="reference internal image-reference" href="../../../_images/4341f114d902eb7798cab97663f9f11e27ebfbac92d6f6c633e93bc6ca540b67.png"><img alt="../../../_images/4341f114d902eb7798cab97663f9f11e27ebfbac92d6f6c633e93bc6ca540b67.png" src="../../../_images/4341f114d902eb7798cab97663f9f11e27ebfbac92d6f6c633e93bc6ca540b67.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
@@ -1619,7 +1623,7 @@ A_{eq} \mathbf{x} = b_eq
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e417b70a89899259d02963f116bf89ec8ac9df6c9d26024c588f500132a4105f.png" src="../../../_images/e417b70a89899259d02963f116bf89ec8ac9df6c9d26024c588f500132a4105f.png" />
+<a class="reference internal image-reference" href="../../../_images/e417b70a89899259d02963f116bf89ec8ac9df6c9d26024c588f500132a4105f.png"><img alt="../../../_images/e417b70a89899259d02963f116bf89ec8ac9df6c9d26024c588f500132a4105f.png" src="../../../_images/e417b70a89899259d02963f116bf89ec8ac9df6c9d26024c588f500132a4105f.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>

@@ -204,8 +204,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../Regression/NonLinearRegression.html">Non-linear Regression: The starting point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Regression/Linearization.html">Linearization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Regression/Kernel_for_Regression.html">Kernel method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Regression/EvaluationModelSelection.html">Evaluation and Model Selection</a></li>
-
+<li class="toctree-l4"><a class="reference internal" href="../Regression/EvaluationModelSelection.html">Project : Evaluation and Model Selection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Regression/Solution_for_Regression.html">Solution Method</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Regression/TheoryRegression.html">Theoretical Aspects of Regression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Regression/ApplicationsPatternRecognition.html">Applications in Pattern Recognition</a></li>
@@ -221,6 +220,7 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../BayesEstimation/BayesEstimation.html">Bayes Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/KDE_1.html">kernel-based density estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/MeanShift.html">Mean Shift Algorithm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/ParametricDensityEstimation1.html">Parametric Density Estimation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../BayesEstimation/GMM.html">Gaussian Mixture Model</a></li>
 </ul>
@@ -242,7 +242,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../SupplementaryDocuments/Covariance1.html">Covariance</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="../../filtering_algorithms.html">Filtering Algorithms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/BasicElements.html">Basic component</a></li>
+</ul>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../signal_processing.html">Signal Processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../image_processing.html">Image Processing</a></li>
 </ul>
@@ -673,7 +677,7 @@ K(x, y) &amp; =(x \cdot y+b)^{d} \quad \text { Polynomial Kernel }
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> gamma: 10, Accuracy: 0.9777777777777777
 </pre></div>
 </div>
-<img alt="../../../_images/7bec5521a501167dd303d2d46ba47e6cf10ed664f5a4051090de8992761e3766.png" src="../../../_images/7bec5521a501167dd303d2d46ba47e6cf10ed664f5a4051090de8992761e3766.png" />
+<a class="reference internal image-reference" href="../../../_images/7bec5521a501167dd303d2d46ba47e6cf10ed664f5a4051090de8992761e3766.png"><img alt="../../../_images/7bec5521a501167dd303d2d46ba47e6cf10ed664f5a4051090de8992761e3766.png" src="../../../_images/7bec5521a501167dd303d2d46ba47e6cf10ed664f5a4051090de8992761e3766.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -762,7 +766,7 @@ K(x, y) &amp; =(x \cdot y+b)^{d} \quad \text { Polynomial Kernel }
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sigma: 10.0, Accuracy: 0.8666666666666667
 </pre></div>
 </div>
-<img alt="../../../_images/21315a51788ae877244f44a89a7444b10f888da5a6021bb24071af6d5c5b132d.png" src="../../../_images/21315a51788ae877244f44a89a7444b10f888da5a6021bb24071af6d5c5b132d.png" />
+<a class="reference internal image-reference" href="../../../_images/21315a51788ae877244f44a89a7444b10f888da5a6021bb24071af6d5c5b132d.png"><img alt="../../../_images/21315a51788ae877244f44a89a7444b10f888da5a6021bb24071af6d5c5b132d.png" src="../../../_images/21315a51788ae877244f44a89a7444b10f888da5a6021bb24071af6d5c5b132d.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -839,7 +843,7 @@ K(x, y) &amp; =(x \cdot y+b)^{d} \quad \text { Polynomial Kernel }
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C: 1.0, Accuracy: 0.9777777777777777
 </pre></div>
 </div>
-<img alt="../../../_images/cd332c0d481343a11ed25c4b6d5ce9c67aa09a56a153d57b7f6f702ba8738d5e.png" src="../../../_images/cd332c0d481343a11ed25c4b6d5ce9c67aa09a56a153d57b7f6f702ba8738d5e.png" />
+<a class="reference internal image-reference" href="../../../_images/cd332c0d481343a11ed25c4b6d5ce9c67aa09a56a153d57b7f6f702ba8738d5e.png"><img alt="../../../_images/cd332c0d481343a11ed25c4b6d5ce9c67aa09a56a153d57b7f6f702ba8738d5e.png" src="../../../_images/cd332c0d481343a11ed25c4b6d5ce9c67aa09a56a153d57b7f6f702ba8738d5e.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>

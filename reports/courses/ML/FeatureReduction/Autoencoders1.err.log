@@ -18,86 +18,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-from tensorflow.keras.layers import Input, Dense
-from tensorflow.keras.models import Model
-from tensorflow.keras.datasets import mnist
-
-# Load MNIST dataset
-(x_train, _), (x_test, _) = mnist.load_data()
-x_train = x_train.astype('float32') / 255.
-x_test = x_test.astype('float32') / 255.
-x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))
-x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
-
-# Define the size of the encoding
-encoding_dim = 32
-
-# Input placeholder
-input_img = Input(shape=(784,))
-
-# Encoder
-encoded = Dense(encoding_dim, activation='relu')(input_img)
-
-# Decoder
-decoded = Dense(784, activation='sigmoid')(encoded)
-
-# Autoencoder model
-autoencoder = Model(input_img, decoded)
-
-# Encoder model
-encoder = Model(input_img, encoded)
-
-# Create a placeholder for an encoded (32-dimensional) input
-encoded_input = Input(shape=(encoding_dim,))
-# Retrieve the last layer of the autoencoder model
-decoder_layer = autoencoder.layers[-1]
-# Decoder model
-decoder = Model(encoded_input, decoder_layer(encoded_input))
-
-# Compile the autoencoder
-autoencoder.compile(optimizer='adam', loss='binary_crossentropy')
-
-# Train the autoencoder
-autoencoder.fit(x_train, x_train,
-                epochs=50,
-                batch_size=256,
-                shuffle=True,
-                validation_data=(x_test, x_test))
-
-# Encode and decode some digits
-encoded_imgs = encoder.predict(x_test)
-decoded_imgs = decoder.predict(encoded_imgs)
-
-# Display original and reconstructed images
-import matplotlib.pyplot as plt
-
-n = 10
-plt.figure(figsize=(20, 4))
-for i in range(n):
-    # Display original
-    ax = plt.subplot(2, n, i + 1)
-    plt.imshow(x_test[i].reshape(28, 28))
-    plt.gray()
-    ax.axis('off')
-
-    # Display reconstruction
-    ax = plt.subplot(2, n, i + 1 + n)
-    plt.imshow(decoded_imgs[i].reshape(28, 28))
-    plt.gray()
-    ax.axis('off')
-plt.show()
-
+from lcapy import Circuit
+cct = Circuit()
+cct.add('V1 1 0 step 10')
+cct.add('Ra 1 2 3e3')
+cct.add('Rb 2 0 1e3')
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 2[0m
-[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[1;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlayers[39;00m [38;5;28;01mimport[39;00m Input, Dense
-[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m [38;5;28;01mimport[39;00m Model
-[0;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdatasets[39;00m [38;5;28;01mimport[39;00m mnist
+Cell [1;32mIn[1], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mlcapy[39;00m [38;5;28;01mimport[39;00m Circuit
+[0;32m      2[0m cct [38;5;241m=[39m Circuit()
+[0;32m      3[0m cct[38;5;241m.[39madd([38;5;124m'[39m[38;5;124mV1 1 0 step 10[39m[38;5;124m'[39m)
 
-[1;31mModuleNotFoundError[0m: No module named 'tensorflow'
+[1;31mModuleNotFoundError[0m: No module named 'lcapy'
 
