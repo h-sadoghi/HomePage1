@@ -245,6 +245,8 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../CircuitElectronicAnalysis.html">Circuit and Electronics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/Introduction_CircuitElectronics.html">Introduction to Circuit and Electronics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/BasicElements.html">Basic component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/KVL_KCL.html">Voltage , Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/NodalMeshAnalysis.html">Basic Nodal and Mesh Analysis</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../signal_processing.html">Signal Processing</a></li>
@@ -601,7 +603,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../../_images/486811c518d2a542196986fe92a56e48802e76158c9a2c17db0c98ca49496339.png"><img alt="../../../_images/486811c518d2a542196986fe92a56e48802e76158c9a2c17db0c98ca49496339.png" src="../../../_images/486811c518d2a542196986fe92a56e48802e76158c9a2c17db0c98ca49496339.png" style="width: 943px; height: 430px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/713e12bd1d4ca1acd8a9228bbc36f2ba78bffa4e3a6810bb8c6493f761c2a581.png"><img alt="../../../_images/713e12bd1d4ca1acd8a9228bbc36f2ba78bffa4e3a6810bb8c6493f761c2a581.png" src="../../../_images/713e12bd1d4ca1acd8a9228bbc36f2ba78bffa4e3a6810bb8c6493f761c2a581.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -627,7 +629,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../../../_images/e4eb3c1b518b284a50c01c4acbdfca078f13571c4ceee701277f50aeaba2c4ef.png"><img alt="../../../_images/e4eb3c1b518b284a50c01c4acbdfca078f13571c4ceee701277f50aeaba2c4ef.png" src="../../../_images/e4eb3c1b518b284a50c01c4acbdfca078f13571c4ceee701277f50aeaba2c4ef.png" style="width: 943px; height: 430px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/98eea5971b602d02abdcab1f2fdc7ebb6dca9fdbf1c339831e2780a15ce2c3f7.png"><img alt="../../../_images/98eea5971b602d02abdcab1f2fdc7ebb6dca9fdbf1c339831e2780a15ce2c3f7.png" src="../../../_images/98eea5971b602d02abdcab1f2fdc7ebb6dca9fdbf1c339831e2780a15ce2c3f7.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
@@ -652,11 +654,11 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2be5cf93740&gt;,
- &lt;matplotlib.lines.Line2D at 0x2be5a411bb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21bff407e60&gt;,
+ &lt;matplotlib.lines.Line2D at 0x21bff4387a0&gt;]
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/a2c19460faeba3c49a2094167dfe23b34f32259a0ddcffb4e44b506bffb3e174.png"><img alt="../../../_images/a2c19460faeba3c49a2094167dfe23b34f32259a0ddcffb4e44b506bffb3e174.png" src="../../../_images/a2c19460faeba3c49a2094167dfe23b34f32259a0ddcffb4e44b506bffb3e174.png" style="width: 943px; height: 430px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/e050409d163c70c31aa670a2b18a3327ef70cdf0a13ae6d1d33b84272f229e49.png"><img alt="../../../_images/e050409d163c70c31aa670a2b18a3327ef70cdf0a13ae6d1d33b84272f229e49.png" src="../../../_images/e050409d163c70c31aa670a2b18a3327ef70cdf0a13ae6d1d33b84272f229e49.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
@@ -674,7 +676,7 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.8726975259124525
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4487627904625564
 </pre></div>
 </div>
 </div>
@@ -722,12 +724,12 @@ S_W \bold{w} = \left(m_2 - m_1\right) \\
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>w: 
-[-0.96649267  0.25669421]
+[-0.92226308 -0.38656281]
 b: 
--0.8726975259124525
+1.4487627904625564
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/419909e422051c69c508468d6dd7647772ce1d86fcbc830ffe8da0d7d9a450c5.png"><img alt="../../../_images/419909e422051c69c508468d6dd7647772ce1d86fcbc830ffe8da0d7d9a450c5.png" src="../../../_images/419909e422051c69c508468d6dd7647772ce1d86fcbc830ffe8da0d7d9a450c5.png" style="width: 943px; height: 430px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/314aa3007cd8bd95026a95ddb0b96e8dd78096af570303a6391c311196642bdf.png"><img alt="../../../_images/314aa3007cd8bd95026a95ddb0b96e8dd78096af570303a6391c311196642bdf.png" src="../../../_images/314aa3007cd8bd95026a95ddb0b96e8dd78096af570303a6391c311196642bdf.png" style="width: 943px; height: 430px;" /></a>
 </div>
 </div>
 </section>
