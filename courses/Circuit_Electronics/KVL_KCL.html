@@ -658,7 +658,9 @@ R_{\text{int}} = \frac{V_0 - v(t)}{I(t)}
 <p>Examples of direct sources include battery voltage and electronic-based current sources. However, variable voltage sources, like the alternating current used in our cities, are different. Another variable source can be constructed using electronic components, as shown in the following schematic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
     <span class="n">V1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5V&#39;</span><span class="p">)</span>
     <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">.75</span><span class="p">)</span>
     <span class="n">S1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SwitchSpdt2</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;close&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$t=0$&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;rgt&#39;</span><span class="p">)</span>
@@ -671,15 +673,34 @@ R_{\text{int}} = \frac{V_0 - v(t)}{I(t)}
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">V1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5V&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">.75</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;schemdraw&#39; is not defined
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;schemdraw&#39;
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5V&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">.75</span><span class="p">)</span>
+    <span class="n">S1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SwitchSpdt2</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;close&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">anchor</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$t=0$&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;rgt&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">unit</span><span class="o">*</span><span class="mf">.75</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">S1</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$100\Omega$&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">([</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="s1">&#39;$v_o$&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">V1</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Capacitor</span><span class="p">()</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">S1</span><span class="o">.</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">toy</span><span class="p">(</span><span class="n">V1</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;1$\mu$F&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/9f7a66811d3bd6141e49faa995f28e0efeacde1e132b2dfe7f95e8dfca1acffe.svg"><img alt="../../_images/9f7a66811d3bd6141e49faa995f28e0efeacde1e132b2dfe7f95e8dfca1acffe.svg" height="430" src="../../_images/9f7a66811d3bd6141e49faa995f28e0efeacde1e132b2dfe7f95e8dfca1acffe.svg" width="943" /></a>
 </div>
 </div>
 <section id="fpl-driver">

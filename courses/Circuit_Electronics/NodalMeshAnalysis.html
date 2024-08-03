@@ -459,7 +459,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodal-analysis"><strong>Nodal Analysis</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodal-analysis"><strong>Nodal Analysis</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-nodal">Example 1: Nodal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-nodal">Example 2: Nodal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soloution">Soloution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-nodal-analysis">Homework: Nodal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh">Mesh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-mesh-is-good">Why Mesh is good</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-current-analysis">Mesh Current Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-steps">General Steps:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kirchhoffs-voltage-law-kvl-equations">Kirchhoff’s Voltage Law (KVL) Equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-solving-in-classroom-1"><strong>Problem Solving in Classroom #1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-mesh-analysis">Homework: Mesh Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-the-supermesh">Homework: THE SUPERMESH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity">Sensitivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sensitivity-of-i-1-relative-to-r-1">The sensitivity of <span class="math notranslate nohighlight">\(I_1\)</span> relative to <span class="math notranslate nohighlight">\(R_1\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-sensitivity">Miniproject: Sensitivity</a></li>
 </ul>
             </nav>
         </div>
@@ -485,8 +509,28 @@ document.write(`
 \[
 \frac{v_2}{1} + \frac{v_2 - v_1}{5} = 1.4
 \]</div>
-<p>Example 1: Nodal</p>
-<p><img alt="Nodal 2_exa" src="courses/Circuit_Electronics/CircuitElectronicsImages/Nodal%202.PNG" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;schemdraw&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-1-nodal">
+<h3>Example 1: Nodal<a class="headerlink" href="#example-1-nodal" title="Link to this heading">#</a></h3>
+<p><img alt="Nodal2_exa" src="../../_images/Nodal2.PNG" /></p>
 <p><strong>At node 1:</strong></p>
 <div class="math notranslate nohighlight">
 \[
@@ -502,6 +546,652 @@ document.write(`
 \[
 -(-25) = \frac{v_3}{5} + \frac{(v_3 - v_2)}{7} + \frac{(v_3 - v_1)}{4}
 \]</div>
+</section>
+<section id="example-2-nodal">
+<h3>Example 2: Nodal<a class="headerlink" href="#example-2-nodal" title="Link to this heading">#</a></h3>
+<p><img alt="Nodal Example2" src="../../_images/Nodal3.PNG" /></p>
+</section>
+<section id="soloution">
+<h3>Soloution<a class="headerlink" href="#soloution" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\( v_1 = 1 \)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{v_4 - v_1}{4} + \frac{v_4 - v_3}{1} + \frac{v_4}{3} = 0 \)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{v_3 - v_4}{1} + 2v_x + \frac{v_3 - v_2}{2} = 0 \)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{v_2 - v_1}{1} + \frac{v_2 - v_3}{2} - 3 = 0 \)</span></p>
+<p><span class="math notranslate nohighlight">\( v_x = v_3 - v_4 \)</span></p>
+<p>To substitute <span class="math notranslate nohighlight">\( v_x = v_3 - v_4 \)</span> into equation 3, we get:</p>
+<p>Given:
+$<span class="math notranslate nohighlight">\(
+\frac{v_3 - v_4}{1} + 2v_x + \frac{v_3 - v_2}{2} = 0
+\)</span>$</p>
+<p>Substitute <span class="math notranslate nohighlight">\( v_x = v_3 - v_4 \)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{v_3 - v_4}{1} + 2(v_3 - v_4) + \frac{v_3 - v_2}{2} = 0
+\]</div>
+<p>Simplify the equation:
+$<span class="math notranslate nohighlight">\(
+(v_3 - v_4) + 2(v_3 - v_4) + \frac{v_3 - v_2}{2} = 0
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+v_3 - v_4 + 2v_3 - 2v_4 + \frac{v_3 - v_2}{2} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+3v_3 - 3v_4 + \frac{v_3 - v_2}{2} = 0
+\]</div>
+<p>Now, the new system of equations is:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( v_1 = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{v_4 - v_1}{4} + \frac{v_4 - v_3}{1} + \frac{v_4}{3} = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 3v_3 - 3v_4 + \frac{v_3 - v_2}{2} = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{v_2 - v_1}{1} + \frac{v_2 - v_3}{2} - 3 = 0 \)</span></p></li>
+</ol>
+<p>To present the given equations as a system of linear equations, we rewrite each equation in a standard form:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\( v_1 = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{v_4 - v_1}{4} + \frac{v_4 - v_3}{1} + \frac{v_4}{3} = 0 \)</span>
+$<span class="math notranslate nohighlight">\(
+\frac{v_4}{4} - \frac{v_1}{4} + v_4 - v_3 + \frac{v_4}{3} = 0
+\)</span>$</p>
+<p>Combine like terms:</p>
+<div class="math notranslate nohighlight">
+\[
+   \left(\frac{1}{4} + 1 + \frac{1}{3}\right)v_4 - \frac{1}{4}v_1 - v_3 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \left(\frac{3}{12} + \frac{12}{12} + \frac{4}{12}\right)v_4 - \frac{1}{4}v_1 - v_3 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \frac{19}{12}v_4 - \frac{1}{4}v_1 - v_3 = 0
+   \]</div>
+<p>Multiply through by 12 to clear the fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+   19v_4 - 3v_1 - 12v_3 = 0
+   \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\( 3v_3 - 3v_4 + \frac{v_3 - v_2}{2} = 0 \)</span></p>
+<div class="math notranslate nohighlight">
+\[
+   3v_3 - 3v_4 + \frac{v_3}{2} - \frac{v_2}{2} = 0
+   \]</div>
+<p>Combine like terms:</p>
+<div class="math notranslate nohighlight">
+\[
+   3v_3 - 3v_4 + \frac{1}{2}v_3 - \frac{1}{2}v_2 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \left(3 + \frac{1}{2}\right)v_3 - 3v_4 - \frac{1}{2}v_2 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \frac{7}{2}v_3 - 3v_4 - \frac{1}{2}v_2 = 0
+   \]</div>
+<p>Multiply through by 2 to clear the fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+   7v_3 - 6v_4 - v_2 = 0
+   \]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\frac{v_2 - v_1}{1} + \frac{v_2 - v_3}{2} - 3 = 0 \)</span></p>
+<div class="math notranslate nohighlight">
+\[
+   v_2 - v_1 + \frac{v_2}{2} - \frac{v_3}{2} - 3 = 0
+   \]</div>
+<p>Combine like terms:</p>
+<div class="math notranslate nohighlight">
+\[
+   v_2 - v_1 + \frac{1}{2}v_2 - \frac{1}{2}v_3 - 3 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \left(1 + \frac{1}{2}\right)v_2 - v_1 - \frac{1}{2}v_3 - 3 = 0
+   \]</div>
+<div class="math notranslate nohighlight">
+\[
+   \frac{3}{2}v_2 - v_1 - \frac{1}{2}v_3 - 3 = 0
+   \]</div>
+<p>Multiply through by 2 to clear the fractions:</p>
+<div class="math notranslate nohighlight">
+\[
+   3v_2 - 2v_1 - v_3 - 6 = 0
+   \]</div>
+</li>
+</ol>
+<p>To convert the system of linear equations into matrix form <span class="math notranslate nohighlight">\( \mathbf{A} \mathbf{v} = \mathbf{b} \)</span>, we organize the coefficients of the variables <span class="math notranslate nohighlight">\( v_1, v_2, v_3, \)</span> and <span class="math notranslate nohighlight">\( v_4 \)</span> into a matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and the constants into a vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p>
+<p>The system of equations is:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( v_1 = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 19v_4 - 3v_1 - 12v_3 = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 7v_3 - 6v_4 - v_2 = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 3v_2 - 2v_1 - v_3 - 6 = 0 \)</span></p></li>
+</ol>
+<p>First, let’s rewrite them in standard form:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( 1v_1 + 0v_2 + 0v_3 + 0v_4 = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( -3v_1 + 0v_2 - 12v_3 + 19v_4 = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 0v_1 - 1v_2 + 7v_3 - 6v_4 = 0 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( -2v_1 + 3v_2 - 1v_3 + 0v_4 = 6 \)</span></p></li>
+</ol>
+<p>Now, the coefficient matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, the variable vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, and the constant vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{A} = \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+-3 &amp; 0 &amp; -12 &amp; 19 \\
+0 &amp; -1 &amp; 7 &amp; -6 \\
+-2 &amp; 3 &amp; -1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{v} = \begin{pmatrix}
+v_1 \\
+v_2 \\
+v_3 \\
+v_4
+\end{pmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{b} = \begin{pmatrix}
+1 \\
+0 \\
+0 \\
+6
+\end{pmatrix}
+\end{split}\]</div>
+<p>Thus, the system of linear equations in matrix form is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A} \mathbf{v} = \mathbf{b}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+-3 &amp; 0 &amp; -12 &amp; 19 \\
+0 &amp; -1 &amp; 7 &amp; -6 \\
+-2 &amp; 3 &amp; -1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+v_1 \\
+v_2 \\
+v_3 \\
+v_4
+\end{pmatrix} = \begin{pmatrix}
+1 \\
+0 \\
+0 \\
+6
+\end{pmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the matrix A and the vector b</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of linear equations</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 3.08536585, 1.25609756, 0.95121951])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The solution to the system of linear equations is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+v_1 \\
+v_2 \\
+v_3 \\
+v_4
+\end{pmatrix} = \begin{pmatrix}
+1 \\
+3.08536585 \\
+1.25609756 \\
+0.95121951
+\end{pmatrix}
+\end{split}\]</div>
+<p>So the values of the variables are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( v_1 = 1 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( v_2 = 3.085 \)</span> (approximately)</p></li>
+<li><p><span class="math notranslate nohighlight">\( v_3 = 1.256 \)</span> (approximately)</p></li>
+<li><p><span class="math notranslate nohighlight">\( v_4 = 0.951 \)</span> (approximately)</p></li>
+</ul>
+</section>
+</section>
+<section id="homework-nodal-analysis">
+<h2>Homework: Nodal Analysis<a class="headerlink" href="#homework-nodal-analysis" title="Link to this heading">#</a></h2>
+<p>For the example above, or a more complex circuit:</p>
+<ul class="simple">
+<li><p>Draw the circuit using Schemdraw.</p></li>
+<li><p>Perform nodal analysis using PySpice.</p></li>
+<li><p>add short discusion</p></li>
+</ul>
+</section>
+<section id="mesh">
+<h2>Mesh<a class="headerlink" href="#mesh" title="Link to this heading">#</a></h2>
+<p>Mesh as a loop that does not contain any other loops within it. start with following example:</p>
+<ul class="simple">
+<li><p>(a,b) The set of branches identified by the heavy lines is neither a path nor a loop.</p></li>
+<li><p>(c) This path is a loop but not a mesh, since it encloses other loops.</p></li>
+<li><p>(d) This path is also a loop but not a mesh.</p></li>
+<li><p>(e, f) Each of these paths is both a loop and a mesh.</p></li>
+</ul>
+<p><img alt="MeshStart1" src="../../_images/MeshStart.PNG" /></p>
+<section id="why-mesh-is-good">
+<h3>Why Mesh is good<a class="headerlink" href="#why-mesh-is-good" title="Link to this heading">#</a></h3>
+<p>One straightforward method to reduce the amount of mathematics involved in circuit analysis is to use Kirchhoff’s Current Law (KCL) to determine the currents, <span class="math notranslate nohighlight">\( I_1 \)</span> and <span class="math notranslate nohighlight">\( I_2 \)</span>, flowing through two resistors. This approach eliminates the need to calculate the current <span class="math notranslate nohighlight">\( I_3 \)</span> separately, as <span class="math notranslate nohighlight">\( I_3 \)</span> is simply the sum of <span class="math notranslate nohighlight">\( I_1 \)</span> and <span class="math notranslate nohighlight">\( I_2 \)</span>.</p>
+<p><img alt="MeshFirstExa" src="../../_images/MeshFirstExample.PNG" /></p>
+<p>Using Kirchhoff’s Voltage Law (KVL), we can write the following equations for the circuit:</p>
+<p>Equation 1: <span class="math notranslate nohighlight">\( 10 = 50I_1 + 40I_2 \)</span><br />
+Equation 2: <span class="math notranslate nohighlight">\( 20 = 40I_1 + 60I_2 \)</span></p>
+<p>By solving these two equations, we can determine the values of <span class="math notranslate nohighlight">\( I_1 \)</span> and <span class="math notranslate nohighlight">\( I_2 \)</span> directly, thus saving one step in the mathematical calculations.</p>
+<p>In detail, the steps are as follows:</p>
+<p><strong>Set up the KVL equations</strong>:
+- For the first loop: <span class="math notranslate nohighlight">\( 10 = 50I_1 + 40I_2 \)</span>
+- For the second loop: <span class="math notranslate nohighlight">\( 20 = 40I_1 + 60I_2 \)</span></p>
+<p><strong>Solve the system of linear equations</strong>:
+- Rearrange the equations to isolate one variable, if needed.
+- Use substitution or matrix methods to find the values of <span class="math notranslate nohighlight">\( I_1 \)</span> and <span class="math notranslate nohighlight">\( I_2 \)</span>.</p>
+<p><strong>Calculate the total current</strong>:
+- <span class="math notranslate nohighlight">\( I_3 \)</span> can be easily found as <span class="math notranslate nohighlight">\( I_3 = I_1 + I_2 \)</span>.</p>
+<p>follow by code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Coefficient matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">]])</span>
+
+<span class="c1"># Right-hand side vector</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of equations</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># Extract the values of I1 and I2</span>
+<span class="n">I1</span><span class="p">,</span> <span class="n">I2</span> <span class="o">=</span> <span class="n">solution</span>
+
+<span class="c1"># Calculate I3</span>
+<span class="n">I3</span> <span class="o">=</span> <span class="n">I1</span> <span class="o">+</span> <span class="n">I2</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I1 = </span><span class="si">{</span><span class="n">I1</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I2 = </span><span class="si">{</span><span class="n">I2</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I3 = </span><span class="si">{</span><span class="n">I3</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I1 = -0.14285714285714285 A
+I2 = 0.42857142857142855 A
+I3 = 0.2857142857142857 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="mesh-current-analysis">
+<h2>Mesh Current Analysis<a class="headerlink" href="#mesh-current-analysis" title="Link to this heading">#</a></h2>
+<p>Mesh Current Analysis, also known as Loop Analysis or Maxwell’s Circulating Currents method, offers an easier approach to solving circuits compared to other methods. Instead of labeling branch currents, each “closed loop” in the circuit is labeled with a circulating current.</p>
+<p><img alt="Meshcirculating" src="../../_images/MeshFirstExample_Circulant.PNG" /></p>
+<section id="general-steps">
+<h3>General Steps:<a class="headerlink" href="#general-steps" title="Link to this heading">#</a></h3>
+<p><strong>Labeling the Loops</strong>: Label each inside loop with a circulating current in a clockwise direction. This approach ensures that all elements of the circuit are covered at least once.</p>
+<p><strong>Relating Branch Currents</strong>: Any required branch current can be found from the appropriate loop or mesh currents using Kirchhoff’s method. For example:
+- <span class="math notranslate nohighlight">\( i_1 = I_1 \)</span>
+- <span class="math notranslate nohighlight">\( i_2 = -I_2 \)</span>
+- <span class="math notranslate nohighlight">\( i_3 = I_1 - I_2 \)</span></p>
+</section>
+<section id="kirchhoffs-voltage-law-kvl-equations">
+<h3>Kirchhoff’s Voltage Law (KVL) Equations:<a class="headerlink" href="#kirchhoffs-voltage-law-kvl-equations" title="Link to this heading">#</a></h3>
+<p>Write the <em>KVL</em> equations for <em>each loop</em>. The advantage of this method is that it minimizes the number of equations needed to solve the circuit and makes it easier to represent the information in <em><strong>matrix form</strong></em>.</p>
+</section>
+<section id="mathematical-formulation">
+<h3>Mathematical Formulation:<a class="headerlink" href="#mathematical-formulation" title="Link to this heading">#</a></h3>
+<p>Consider the circuit from the previous section. We have a circuit with two mesh and the following resistances and voltages:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( R_1, R_2, R_3 \)</span>: Resistances in the loops.</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_1, V_2 \)</span>: Voltage sources.</p></li>
+</ul>
+<p>The mesh currents are labeled <span class="math notranslate nohighlight">\( I_1, I_2 \)</span>. According to KVL, the equations for the loops are:</p>
+<p><strong>Loop 1:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+I_1(R_1 + R_3) - I_2R_3 = V_1
+\]</div>
+<p><strong>Loop 2:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+-I_1R_3 + I_2(R_2 + R_3) = -V_2
+\]</div>
+<p><strong>Matrix Form:</strong>
+These equations can be written in matrix form as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+R_1 + R_3 &amp; -R_3 \\
+-R_3 &amp; R_2 + R_3
+\end{bmatrix}
+\begin{bmatrix}
+I_1 \\
+I_2
+\end{bmatrix} =
+\begin{bmatrix}
+V_1 \\
+-V_2
+\end{bmatrix}
+\end{split}\]</div>
+<p>Solving this system of linear equations provides the mesh currents <span class="math notranslate nohighlight">\( I_1 \)</span> and <span class="math notranslate nohighlight">\( I_2 \)</span>. Following code solve it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the resistances and voltage sources</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Ohms</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Ohms</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># Ohms</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Volts</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Volts</span>
+
+<span class="c1"># Coefficients matrix for the system of equations</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R3</span><span class="p">,</span> <span class="o">-</span><span class="n">R3</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="n">R3</span><span class="p">,</span> <span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Voltage matrix</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">V1</span><span class="p">,</span> <span class="o">-</span><span class="n">V2</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of linear equations</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># Display the mesh currents</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh Current I1: </span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh Current I2: </span><span class="si">{</span><span class="n">I</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mesh Current I1: -0.14 A
+Mesh Current I2: -0.43 A
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="problem-solving-in-classroom-1">
+<h2><strong>Problem Solving in Classroom #1</strong><a class="headerlink" href="#problem-solving-in-classroom-1" title="Link to this heading">#</a></h2>
+<p>Compute current of <span class="math notranslate nohighlight">\( R_\text{3} \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">()</span> <span class="k">as</span> <span class="n">d</span><span class="p">:</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V1=2V&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">R1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R1=4Ω&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
+
+    <span class="n">d</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R2=1Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add a new resistor vertically down from point &#39;C&#39;</span>
+    <span class="n">R3</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R3=2Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">R4</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R4=3Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R3</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">V2</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V2=3V&#39;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R4</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">R5</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">right</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R5=4Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">R6</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R6=5Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R3</span><span class="o">.</span><span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">V3</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;V3=4V&#39;</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R6</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+    <span class="n">R7</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;R7=1Ω&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;bot&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">R2</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+
+    <span class="n">elm</span><span class="o">.</span><span class="n">Dot</span><span class="p">()</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="n">L1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span>
+    <span class="n">I1</span> <span class="o">=</span> <span class="n">elm</span><span class="o">.</span><span class="n">SourceI</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;I1=1A&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">idot</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="c1">#L2 = elm.Line().tox(V1.start)</span>
+    
+    <span class="c1"># Define the loops</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">LoopCurrent</span><span class="p">([</span><span class="n">R1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">R7</span><span class="p">,</span> <span class="n">V1</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$I_1$&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">LoopCurrent</span><span class="p">([</span><span class="n">R1</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">R5</span><span class="p">,</span> <span class="n">R2</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$I_2$&#39;</span><span class="p">)</span> 
+    <span class="n">elm</span><span class="o">.</span><span class="n">LoopCurrent</span><span class="p">([</span><span class="n">R5</span><span class="p">,</span> <span class="n">V2</span><span class="p">,</span> <span class="n">R4</span><span class="p">,</span> <span class="n">R3</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$I_3$&#39;</span><span class="p">)</span> 
+    <span class="n">elm</span><span class="o">.</span><span class="n">LoopCurrent</span><span class="p">([</span><span class="n">R7</span><span class="p">,</span> <span class="n">R3</span><span class="p">,</span> <span class="n">R6</span><span class="p">,</span> <span class="n">V3</span><span class="p">],</span> <span class="n">pad</span><span class="o">=</span><span class="mf">1.25</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;$I_4$&#39;</span><span class="p">)</span> 
+
+    <span class="n">d</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../../_images/5466d5864b590c33793b97c755f70eec22f9fea4abe819d543fdae61e1912c37.svg"><img alt="../../_images/5466d5864b590c33793b97c755f70eec22f9fea4abe819d543fdae61e1912c37.svg" height="430" src="../../_images/5466d5864b590c33793b97c755f70eec22f9fea4abe819d543fdae61e1912c37.svg" width="943" /></a>
+</div>
+</div>
+</section>
+<section id="homework-mesh-analysis">
+<h2>Homework: Mesh Analysis<a class="headerlink" href="#homework-mesh-analysis" title="Link to this heading">#</a></h2>
+<p>For the example above, or a more complex circuit:</p>
+<ul class="simple">
+<li><p>Perform mesh analysis using PySpice.</p></li>
+<li><p>add short discusion</p></li>
+</ul>
+</section>
+<section id="homework-the-supermesh">
+<h2>Homework: THE SUPERMESH<a class="headerlink" href="#homework-the-supermesh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>suitable jupyter nootbook (short text)</p></li>
+<li><p>Pyspice &amp; Schemdraw</p></li>
+</ul>
+</section>
+<section id="sensitivity">
+<h2>Sensitivity<a class="headerlink" href="#sensitivity" title="Link to this heading">#</a></h2>
+<p>The sensitivity of <span class="math notranslate nohighlight">\(I_1\)</span> to <span class="math notranslate nohighlight">\(R_3\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+(S^{I_1}_{R_3}) = \frac{\partial I_1}{\partial R_3} \frac{R_3}{I_1}
+\]</div>
+<p><strong>Find <span class="math notranslate nohighlight">\(I_1\)</span> in terms of <span class="math notranslate nohighlight">\(R_3\)</span></strong>:
+From the given equations:</p>
+<div class="math notranslate nohighlight">
+\[
+I_1 = \frac{(R_2 + R_3)V_1 - R_3V_2}{(R_1 + R_3)(R_2 + R_3) - R_3^2}
+\]</div>
+<p><strong>Compute <span class="math notranslate nohighlight">\(\frac{\partial I_1}{\partial R_3}\)</span></strong>:
+Let:</p>
+<div class="math notranslate nohighlight">
+\[
+N = (R_2 + R_3)V_1 - R_3V_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = (R_1 + R_3)(R_2 + R_3) - R_3^2
+\]</div>
+<p>Using the quotient rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_1}{\partial R_3} = \frac{D \frac{\partial N}{\partial R_3} - N \frac{\partial D}{\partial R_3}}{D^2}
+\]</div>
+<p>Compute the partial derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial N}{\partial R_3} = V_1 - V_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial D}{\partial R_3} = (R_1 + R_3) + (R_2 + R_3) - 2R_3
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial D}{\partial R_3} = R_1 + R_2
+\]</div>
+<p>Substituting these into the equation for <span class="math notranslate nohighlight">\(\frac{\partial I_1}{\partial R_3}\)</span>:
+$<span class="math notranslate nohighlight">\( \frac{\partial I_1}{\partial R_3} = \frac{[(R_1 + R_3)(R_2 + R_3) - R_3^2](V_1 - V_2) - [(R_2 + R_3)V_1 - R_3V_2](R_1 + R_2)}{[(R_1 + R_3)(R_2 + R_3) - R_3^2]^2} \)</span>$</p>
+<p><strong>Compute the sensitivity</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+(S^{I_1}_{R_3}) = \frac{\partial I_1}{\partial R_3} \frac{R_3}{I_1}
+\]</div>
+<p>using following code:</p>
+<section id="the-sensitivity-of-i-1-relative-to-r-1">
+<h3>The sensitivity of <span class="math notranslate nohighlight">\(I_1\)</span> relative to <span class="math notranslate nohighlight">\(R_1\)</span><a class="headerlink" href="#the-sensitivity-of-i-1-relative-to-r-1" title="Link to this heading">#</a></h3>
+<p>using the given definition, follow these steps:</p>
+<p><strong>Find <span class="math notranslate nohighlight">\(I_1\)</span> in terms of <span class="math notranslate nohighlight">\(R_1\)</span></strong>:
+Recall the expression for <span class="math notranslate nohighlight">\(I_1\)</span>:
+$<span class="math notranslate nohighlight">\(
+I_1 = \frac{(R_2 + R_3)V_1 - R_3V_2}{(R_1 + R_3)(R_2 + R_3) - R_3^2}
+\)</span>$</p>
+<p><strong>Compute <span class="math notranslate nohighlight">\(\frac{\partial I_1}{\partial R_1}\)</span></strong>:
+Let:</p>
+<div class="math notranslate nohighlight">
+\[
+N = (R_2 + R_3)V_1 - R_3V_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = (R_1 + R_3)(R_2 + R_3) - R_3^2
+\]</div>
+<p>Using the quotient rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_1}{\partial R_1} = \frac{D \frac{\partial N}{\partial R_1} - N \frac{\partial D}{\partial R_1}}{D^2}
+\]</div>
+<p>Compute the partial derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial N}{\partial R_1} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial D}{\partial R_1} = R_2 + R_3
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial I_1}{\partial R_1} = \frac{D \cdot 0 - N \cdot (R_2 + R_3)}{D^2} = -\frac{N \cdot (R_2 + R_3)}{D^2}
+\]</div>
+<p><strong>Compute the sensitivity</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+(S^{I_1}_{R_1}) = \frac{\partial I_1}{\partial R_1} \frac{R_1}{I_1}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the resistances and voltage sources</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Ohms</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Ohms</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># Ohms</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Volts</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Volts</span>
+
+<span class="c1"># Coefficients matrix for the system of equations</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R3</span><span class="p">,</span> <span class="o">-</span><span class="n">R3</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="n">R3</span><span class="p">,</span> <span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Voltage matrix</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">V1</span><span class="p">,</span> <span class="o">-</span><span class="n">V2</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of linear equations</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Compute the partial derivatives</span>
+<span class="n">dN_dR3</span> <span class="o">=</span> <span class="n">V1</span> <span class="o">-</span> <span class="n">V2</span>
+<span class="n">dD_dR3</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">+</span> <span class="n">R2</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">*</span> <span class="n">V1</span> <span class="o">-</span> <span class="n">R3</span> <span class="o">*</span> <span class="n">V2</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">-</span> <span class="n">R3</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">partial_I1_R3</span> <span class="o">=</span> <span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="n">dN_dR3</span> <span class="o">-</span> <span class="n">N</span> <span class="o">*</span> <span class="n">dD_dR3</span><span class="p">)</span> <span class="o">/</span> <span class="n">D</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Sensitivity calculation</span>
+<span class="n">sensitivity_I1_R3</span> <span class="o">=</span> <span class="n">partial_I1_R3</span> <span class="o">*</span> <span class="p">(</span><span class="n">R3</span> <span class="o">/</span> <span class="n">I1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh Current I1: </span><span class="si">{</span><span class="n">I1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensitivity of I1 to R3: </span><span class="si">{</span><span class="n">sensitivity_I1_R3</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> A/Ohm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mesh Current I1: -0.14 A
+Sensitivity of I1 to R3: 1.1429 A/Ohm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the resistances and voltage sources</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Ohms</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Ohms</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># Ohms</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Volts</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Volts</span>
+
+<span class="c1"># Coefficients matrix for the system of equations</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R3</span><span class="p">,</span> <span class="o">-</span><span class="n">R3</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="n">R3</span><span class="p">,</span> <span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Voltage matrix</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">V1</span><span class="p">,</span> <span class="o">-</span><span class="n">V2</span><span class="p">])</span>
+
+<span class="c1"># Solve the system of linear equations</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Compute the partial derivatives</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">*</span> <span class="n">V1</span> <span class="o">-</span> <span class="n">R3</span> <span class="o">*</span> <span class="n">V2</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">R1</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">-</span> <span class="n">R3</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Sensitivity calculation</span>
+<span class="n">partial_I1_R1</span> <span class="o">=</span> <span class="o">-</span><span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">R2</span> <span class="o">+</span> <span class="n">R3</span><span class="p">)</span> <span class="o">/</span> <span class="n">D</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">sensitivity_I1_R1</span> <span class="o">=</span> <span class="n">partial_I1_R1</span> <span class="o">*</span> <span class="p">(</span><span class="n">R1</span> <span class="o">/</span> <span class="n">I1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh Current I1: </span><span class="si">{</span><span class="n">I1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> A&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sensitivity of I1 to R1: </span><span class="si">{</span><span class="n">sensitivity_I1_R1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> A/Ohm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mesh Current I1: -0.14 A
+Sensitivity of I1 to R1: -0.4286 A/Ohm
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="miniproject-sensitivity">
+<h2>Miniproject: Sensitivity<a class="headerlink" href="#miniproject-sensitivity" title="Link to this heading">#</a></h2>
+<p>Complete the sensitivity section with suitable text, mathematics, and circuit drawings. Additionally, solve the circuit using Pyspice.</p>
 </section>
 </section>
 
@@ -569,7 +1259,31 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodal-analysis"><strong>Nodal Analysis</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nodal-analysis"><strong>Nodal Analysis</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-nodal">Example 1: Nodal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-nodal">Example 2: Nodal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soloution">Soloution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-nodal-analysis">Homework: Nodal Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh">Mesh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-mesh-is-good">Why Mesh is good</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-current-analysis">Mesh Current Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-steps">General Steps:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kirchhoffs-voltage-law-kvl-equations">Kirchhoff’s Voltage Law (KVL) Equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-formulation">Mathematical Formulation:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-solving-in-classroom-1"><strong>Problem Solving in Classroom #1</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-mesh-analysis">Homework: Mesh Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-the-supermesh">Homework: THE SUPERMESH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity">Sensitivity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-sensitivity-of-i-1-relative-to-r-1">The sensitivity of <span class="math notranslate nohighlight">\(I_1\)</span> relative to <span class="math notranslate nohighlight">\(R_1\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniproject-sensitivity">Miniproject: Sensitivity</a></li>
 </ul>
   </nav></div>
 
