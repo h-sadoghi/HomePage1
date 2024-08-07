@@ -252,6 +252,7 @@
 <li class="toctree-l3"><a class="reference internal" href="DiodeApplication.html">Diode Application</a></li>
 
 
+<li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
@@ -479,6 +480,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-region-and-forward-bias"><strong>Depletion Region and Forward Bias</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-bias">Reverse Bias</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-curve-of-the-silicon-p-n-junction-diode">IV curve of the silicon p-n junction diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-diode-using-pyspice">I-V Diode using Pyspice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-load-in-diode-circuits">Line Load in Diode Circuits</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line"><strong>Load Line:</strong></a></li>
 </ul>
@@ -672,6 +675,83 @@ Due to their electric charge, this diffusion creates a built-in electric field a
 </div>
 </div>
 </section>
+<section id="i-v-diode-using-pyspice">
+<h3>I-V Diode using Pyspice<a class="headerlink" href="#i-v-diode-using-pyspice" title="Link to this heading">#</a></h3>
+<p>Small Signal model of Diode</p>
+<p><img alt="AC Small Signal Spice Model" src="../../_images/Example_SmallSignalDiodeModel1.PNG" /></p>
+<p>I-V charactristic of Ideal diode , real Diode and Spice model</p>
+<p><img alt="IV_Char_Real_Ideal_Spice" src="../../_images/IV_DiodeCharactristice_Real_Spice_Ideal.png" /></p>
+</section>
+<section id="diode-1n4148">
+<h3>Diode=1n4148<a class="headerlink" href="#diode-1n4148" title="Link to this heading">#</a></h3>
+<p>Include breakdown voltage and forward region</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Define sweep parameters</span>
+<span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">120</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Define the circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;First Example Define diode&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add a diode with specific parameters</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;Diode&#39;</span><span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">&#39;Diode&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">IS</span><span class="o">=</span><span class="mf">4.352E-9</span><span class="p">,</span> <span class="n">BV</span> <span class="o">=</span> <span class="mi">110</span><span class="p">,</span> <span class="n">GMIN</span> <span class="o">=</span> <span class="mf">1E-12</span><span class="p">,</span>
+               <span class="n">N</span><span class="o">=</span><span class="mf">1.906</span><span class="p">,</span> <span class="n">IBV</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="n">RS</span> <span class="o">=</span> <span class="mf">0.6458</span><span class="p">,</span>
+                 <span class="n">CJO</span> <span class="o">=</span> <span class="mf">7.048E-13</span><span class="p">,</span> <span class="n">VJ</span> <span class="o">=</span> <span class="mf">0.869</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">,</span> <span class="n">FC</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="n">TT</span> <span class="o">=</span> <span class="mf">3.48E-9</span> 
+                   <span class="p">)</span>
+
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;meas&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Create a simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="c1"># Perform a DC sweep analysis</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">Vinput</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">Vinput_start</span><span class="p">,</span> <span class="n">Vinput_stop</span><span class="p">,</span> <span class="n">Vinput_step</span><span class="p">))</span>
+
+<span class="n">waveform</span> <span class="o">=</span> <span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">sweep_values1</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;v-sweep&#39;</span><span class="p">]</span>
+<span class="n">InputCurrentMeasurement</span><span class="o">=</span><span class="n">analysis</span><span class="p">[</span><span class="s1">&#39;vmeas&#39;</span><span class="p">]</span>
+<span class="c1"># Assuming waveform.data provides the voltage values for node &#39;3&#39;</span>
+<span class="n">voltage_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;symlog&#39;</span><span class="p">,</span> <span class="n">linthresh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">voltage_values</span><span class="p">,</span><span class="n">InputCurrentMeasurement</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Vinput (V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Input current (A)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;DC Sweep Analysis for input Node current&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;PySpice&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="line-load-in-diode-circuits">
 <h3>Line Load in Diode Circuits<a class="headerlink" href="#line-load-in-diode-circuits" title="Link to this heading">#</a></h3>
 <p><strong>Concept of Line Load:</strong></p>
@@ -814,7 +894,7 @@ By plotting the diode I-V curve and the load line, and highlighting the intersec
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f096dfaa2c72c0ceae9f22420d82cde9d6f468fe303c2f913a20df9aadbbece6.png" src="../../_images/f096dfaa2c72c0ceae9f22420d82cde9d6f468fe303c2f913a20df9aadbbece6.png" />
+<img alt="../../_images/03db93307dc3b0ba7fd69756876f256a154ae72797450429c7c6441e39facc98.png" src="../../_images/03db93307dc3b0ba7fd69756876f256a154ae72797450429c7c6441e39facc98.png" />
 </div>
 </div>
 </section>
@@ -1164,7 +1244,7 @@ r_d \approx \frac{\eta V_T}{I_D}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1518a6db026a4b14738551d6e1b793ea9fff6992a49a10b5ab2bc262ac8e24f3.png" src="../../_images/1518a6db026a4b14738551d6e1b793ea9fff6992a49a10b5ab2bc262ac8e24f3.png" />
+<img alt="../../_images/bd7ccc6214b99857f983a2b30443a8a3ae9d616684b32e79b9d644e1a37d2183.png" src="../../_images/bd7ccc6214b99857f983a2b30443a8a3ae9d616684b32e79b9d644e1a37d2183.png" />
 </div>
 </div>
 </section>
@@ -1395,7 +1475,7 @@ r_d \approx \frac{\eta V_T}{I_D}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/79f9de65da70eab8218f8f776a01baa90f47bcf656647357eb8e68c89ec04c74.png" src="../../_images/79f9de65da70eab8218f8f776a01baa90f47bcf656647357eb8e68c89ec04c74.png" />
+<img alt="../../_images/b20f41ffdec3229c2eb0bc84d8f36fe8d0cee4304980d7941f31be0c97ee2630.png" src="../../_images/b20f41ffdec3229c2eb0bc84d8f36fe8d0cee4304980d7941f31be0c97ee2630.png" />
 </div>
 </div>
 </section>
@@ -1536,6 +1616,8 @@ The simplified equivalent circuit often ignores the small resistance of the diod
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#depletion-region-and-forward-bias"><strong>Depletion Region and Forward Bias</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-bias">Reverse Bias</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-curve-of-the-silicon-p-n-junction-diode">IV curve of the silicon p-n junction diode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-v-diode-using-pyspice">I-V Diode using Pyspice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diode-1n4148">Diode=1n4148</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-load-in-diode-circuits">Line Load in Diode Circuits</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-line"><strong>Load Line:</strong></a></li>
 </ul>
