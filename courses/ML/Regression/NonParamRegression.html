@@ -253,6 +253,8 @@
 
 
 <li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Circuit_Electronics/OpAmp.html">Operational Amplifier</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../../signal_processing.html">Signal Processing</a></li>
@@ -925,12 +927,67 @@ msedge.exe
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">44</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Process&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Memory Usage (MB)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">memory_usage</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">44</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="c1"># Convert data to a DataFrame</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">40</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="n">processes_to_monitor</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">40</span>     <span class="n">memory_usage</span> <span class="o">=</span> <span class="n">get_memory_usage</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Process&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
+
+<span class="nn">Cell In[3], line 10,</span> in <span class="ni">get_memory_usage</span><span class="nt">(process_name)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">def</span> <span class="nf">get_memory_usage</span><span class="p">(</span><span class="n">process_name</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="sd">     Get the memory usage of a process by its name.</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="n">psutil</span><span class="o">.</span><span class="n">process_iter</span><span class="p">([</span><span class="s1">&#39;pid&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]):</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">process_name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>             <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File E:\MainHomePage\.M_HomePage\Lib\site-packages\psutil\__init__.py:1510,</span> in <span class="ni">process_iter</span><span class="nt">(attrs, ad_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1505</span>     <span class="k">yield</span> <span class="n">add</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1506</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1507</span>     <span class="c1"># use is_running() to check whether PID has been</span>
+<span class="g g-Whitespace">   </span><span class="mi">1508</span>     <span class="c1"># reused by another process in which case yield a</span>
+<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="c1"># new Process instance</span>
+<span class="ne">-&gt; </span><span class="mi">1510</span>     <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">1511</span>         <span class="k">if</span> <span class="n">attrs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1512</span>             <span class="n">proc</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">as_dict</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1513</span>                 <span class="n">attrs</span><span class="o">=</span><span class="n">attrs</span><span class="p">,</span> <span class="n">ad_value</span><span class="o">=</span><span class="n">ad_value</span>
+<span class="g g-Whitespace">   </span><span class="mi">1514</span>             <span class="p">)</span>
+
+<span class="nn">File E:\MainHomePage\.M_HomePage\Lib\site-packages\psutil\__init__.py:613,</span> in <span class="ni">Process.is_running</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="c1"># Checking if PID is alive is not enough as the PID might</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span>     <span class="c1"># have been reused by another process: we also want to</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span>     <span class="c1"># verify process identity.</span>
+<span class="g g-Whitespace">    </span><span class="mi">611</span>     <span class="c1"># Process identity / uniqueness over time is guaranteed by</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="c1"># (PID + creation time) and that is verified in __eq__.</span>
+<span class="ne">--&gt; </span><span class="mi">613</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_pid_reused</span> <span class="o">=</span> <span class="bp">self</span> <span class="o">!=</span> <span class="n">Process</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pid_reused</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span> <span class="k">except</span> <span class="n">ZombieProcess</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span>     <span class="c1"># We should never get here as it&#39;s already handled in</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span>     <span class="c1"># Process.__init__; here just for extra safety.</span>
+
+<span class="nn">File E:\MainHomePage\.M_HomePage\Lib\site-packages\psutil\__init__.py:323,</span> in <span class="ni">Process.__init__</span><span class="nt">(self, pid)</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">323</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_init</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+
+<span class="nn">File E:\MainHomePage\.M_HomePage\Lib\site-packages\psutil\__init__.py:379,</span> in <span class="ni">Process._init</span><span class="nt">(self, pid, _ignore_nsp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_gone</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="c1"># This pair is supposed to identify a Process instance</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="c1"># univocally over time (the PID alone is not enough as</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="c1"># it might refer to a process whose PID has been reused).</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="c1"># This will be used later in __eq__() and is_running().</span>
+<span class="ne">--&gt; </span><span class="mi">379</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ident</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_time</span><span class="p">)</span>
+
+<span class="nn">File E:\MainHomePage\.M_HomePage\Lib\site-packages\psutil\__init__.py:449,</span> in <span class="ni">Process.pid</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;process no longer exists and its PID has been reused&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="k">raise</span> <span class="n">NoSuchProcess</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">449</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="k">def</span> <span class="nf">pid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;The process PID.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pid</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

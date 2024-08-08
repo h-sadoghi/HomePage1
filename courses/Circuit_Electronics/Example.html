@@ -251,6 +251,8 @@
 
 
 <li class="toctree-l3"><a class="reference internal" href="BJT1.html">Bipolar junction transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FET.html">Field Effect Transistor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OpAmp.html">Operational Amplifier</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="../signal_processing.html">Signal Processing</a></li>
@@ -568,7 +570,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 <span class="c1"># Define sweep parameters</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="mi">0</span>
@@ -641,7 +643,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 <span class="c1"># Define sweep parameters</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
@@ -696,7 +698,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 <span class="c1"># Define sweep parameters</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">120</span>
@@ -758,7 +760,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 <span class="c1"># Define sweep parameters</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
@@ -837,9 +839,9 @@ document.write(`
 <p>To obtain the saturation region, we need to bias the input diode (BE) at voltages below 0.6V and use a small VCE.</p>
 <p>First, let’s determine how to obtain the output characteristics of a transistor. Follow these steps:</p>
 <ul class="simple">
-<li><p><strong>Set Up the Circuit:</strong> Configure your transistor circuit with the base, collector, and emitter. Ensure you have a method to vary the base current.</p></li>
-<li><p><strong>Perform DC Analysis:</strong> For each base current, conduct a DC analysis by sweeping the collector voltage and recording the collector current.</p></li>
-<li><p><strong>Save and Plot Results:</strong> Save the results for each base current and plot the collector current versus collector voltage.</p></li>
+<li><p>##Set Up the Circuit:## Configure your transistor circuit with the base, collector, and emitter. Ensure you have a method to vary the base current.</p></li>
+<li><p>##Perform DC Analysis:## For each base current, conduct a DC analysis by sweeping the collector voltage and recording the collector current.</p></li>
+<li><p>##Save and Plot Results:## Save the results for each base current and plot the collector current versus collector voltage.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,7 +851,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 
 
@@ -874,7 +876,7 @@ document.write(`
 <span class="c1"># Define sweep parameters</span>
 <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="o">*</span><span class="mf">0.004</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="c1">#0.004</span>
 <span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
 
 
@@ -923,7 +925,7 @@ document.write(`
     
     <span class="c1"># Store results</span>
     <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
-    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Convert to mA</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="c1"># 1000)  # Convert to mA</span>
     <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
 
 
@@ -961,7 +963,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
 <span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span>
-<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="c1">#</span>
 
 
 
@@ -986,7 +988,7 @@ document.write(`
 <span class="c1"># Define sweep parameters</span>
 <span class="n">VAF</span><span class="o">=</span><span class="mf">16.5003</span>
 <span class="n">Vinput_start</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="o">*</span><span class="mf">0.5</span>
+<span class="n">Vinput_stop</span> <span class="o">=</span> <span class="n">VAF</span><span class="c1">#0.5</span>
 <span class="n">Vinput_step</span> <span class="o">=</span> <span class="mf">0.0001</span>
 
 
@@ -1035,7 +1037,7 @@ document.write(`
     
     <span class="c1"># Store results</span>
     <span class="n">collector_voltages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">waveform</span><span class="p">))</span>
-    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Convert to mA</span>
+    <span class="n">collector_currents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InputCurrentMeasurement</span> <span class="c1"># 1000)  # Convert to mA</span>
     <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Vbase_value</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Format to two decimal places for clarity</span>
 
 
@@ -1060,6 +1062,152 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" src="../../_images/26925377a6f3fa5653d1df0ca7c7da9ec468ec4c5db6a299d2ae1ad97e882d74.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+
+
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span><span class="p">,</span> <span class="n">SubCircuitFactory</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">ParallelResistor2</span><span class="p">(</span><span class="n">SubCircuit</span><span class="p">):</span>
+    <span class="n">__nodes__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">R1</span><span class="o">=</span><span class="mi">1</span><span class="nd">@u_Ω</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">2</span><span class="nd">@u_Ω</span><span class="p">):</span>
+        <span class="n">SubCircuit</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__nodes__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="n">R1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="p">)</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">subcircuit</span><span class="p">(</span><span class="n">ParallelResistor2</span><span class="p">(</span><span class="s1">&#39;pr1&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">2</span><span class="nd">@u_Ω</span><span class="p">))</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;pr1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">subcircuit</span><span class="p">(</span><span class="n">ParallelResistor2</span><span class="p">(</span><span class="s1">&#39;pr2&#39;</span><span class="p">,</span> <span class="n">R2</span><span class="o">=</span><span class="mi">3</span><span class="nd">@u_Ω</span><span class="p">))</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;pr2&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.title Test
+.subckt pr1 n1 n2
+R1 n1 n2 1Ohm
+R2 n1 n2 2Ohm
+.ends pr1
+
+.subckt pr2 n1 n2
+R1 n1 n2 1Ohm
+R2 n1 n2 3Ohm
+.ends pr2
+X1 1 0 pr1
+X2 1 0 pr2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PySpice.Logging.Logging</span> <span class="k">as</span> <span class="nn">Logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logging</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span><span class="p">,</span> <span class="n">SubCircuitFactory</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1">################</span>
+
+<span class="kn">from</span> <span class="nn">PySpice.Probe.Plot</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Library</span> <span class="kn">import</span> <span class="n">SpiceLibrary</span>
+<span class="kn">from</span> <span class="nn">PySpice.Spice.Netlist</span> <span class="kn">import</span> <span class="n">Circuit</span><span class="p">,</span> <span class="n">SubCircuit</span>
+<span class="kn">from</span> <span class="nn">PySpice.Unit</span> <span class="kn">import</span> <span class="o">*</span>
+
+     
+<span class="c1">#&#39;noninvertinginput&#39;, &#39;invertinginput&#39;, &#39;positivepowersupply&#39;, &#39;negativepowersupply&#39;, &#39;output&#39;)</span>
+<span class="c1">#1   2  99  50  28</span>
+<span class="k">class</span> <span class="nc">LM741</span><span class="p">(</span><span class="n">SubCircuit</span><span class="p">):</span>
+    <span class="n">__nodes__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">SubCircuit</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__nodes__</span><span class="p">)</span>
+
+        <span class="c1"># Input Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="s1">&#39;OS&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="nd">@u_nA</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="mi">250</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_uA</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="mi">517</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="mi">517</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n2&#39;</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;QX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="s1">&#39;n7&#39;</span><span class="p">,</span> <span class="s1">&#39;n4&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;QX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="mf">60.3614</span><span class="nd">@u_pF</span><span class="p">)</span>
+
+        <span class="c1"># Common Mode Effect</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mf">1.6</span><span class="nd">@u_mA</span><span class="p">)</span>
+        <span class="c1"># Use a behavioral voltage source to model the polynomial relationship</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">(</span><span class="s1">&#39;OS&#39;</span><span class="p">,</span> <span class="s1">&#39;n7&#39;</span><span class="p">,</span> <span class="s1">&#39;n1&#39;</span><span class="p">,</span> <span class="n">voltage_expression</span><span class="o">=</span><span class="s1">&#39;1e-3 * (V(16) - V(49)) + 1&#39;</span><span class="p">)</span>
+
+        <span class="c1">#self.V(&#39;OS&#39;, &#39;n7&#39;, &#39;n1&#39;, model=&#39;POLY&#39;, parameters=(1, 16, 49, 1e-3, 1))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+        <span class="c1"># Output Voltage Limiting</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n8&#39;</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n8&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n10&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n10&#39;</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">)</span>
+
+        <span class="c1"># Second Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n5&#39;</span><span class="p">,</span> <span class="s1">&#39;n6&#39;</span><span class="p">,</span> <span class="mf">2.1e-3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="mf">95.493</span><span class="nd">@u_MΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="mf">333.33</span><span class="nd">@u_pF</span><span class="p">)</span>
+
+        <span class="c1"># Pole Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="s1">&#39;n9&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_MΩ</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mf">5.3052</span><span class="nd">@u_fF</span><span class="p">)</span>
+
+        <span class="c1"># Common-Mode Zero Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n16&#39;</span><span class="p">,</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span> <span class="s1">&#39;n49&#39;</span><span class="p">,</span> <span class="mf">3.1623e-8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;n98&#39;</span><span class="p">,</span> <span class="s1">&#39;n17&#39;</span><span class="p">,</span> <span class="mf">530.5</span><span class="nd">@u_mH</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;n17&#39;</span><span class="p">,</span> <span class="s1">&#39;n16&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+        <span class="c1"># Output Stage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">F</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n50&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;POLY&#39;</span><span class="p">,</span> <span class="s1">&#39;V6&#39;</span><span class="p">,</span> <span class="mi">450</span><span class="nd">@u_uA</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="s1">&#39;n99&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;n24&#39;</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n26&#39;</span><span class="p">,</span> <span class="s1">&#39;n24&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n26&#39;</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;n23&#39;</span><span class="p">,</span> <span class="s1">&#39;n25&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="nd">@u_Ω</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;n25&#39;</span><span class="p">,</span> <span class="s1">&#39;n27&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n27&#39;</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n21&#39;</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n21&#39;</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;n20&#39;</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n15&#39;</span><span class="p">,</span> <span class="s1">&#39;n20&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;DX&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_pH</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">RL</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;n22&#39;</span><span class="p">,</span> <span class="s1">&#39;n28&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1">################</span>
+
+<span class="c1"># Example usage in a circuit</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">Circuit</span><span class="p">(</span><span class="s1">&#39;LM741 Test Circuit&#39;</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;PositivePole&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;NegtivePole&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="s1">&#39;Inverting&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mf">1E-12</span><span class="p">)</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">circuit</span><span class="o">.</span><span class="n">gnd</span><span class="p">,</span> <span class="mi">2</span><span class="nd">@u_kΩ</span><span class="p">)</span>
+
+<span class="c1"># Instantiate and connect the LM741 subcircuit</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;LM741&#39;</span><span class="p">,</span> <span class="s1">&#39;LM741&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">)</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">simulator</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">nominal_temperature</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1">#analysis = simulator.operating_point()</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
