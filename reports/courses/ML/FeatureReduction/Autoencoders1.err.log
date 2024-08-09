@@ -18,20 +18,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from lcapy import Circuit
-cct = Circuit()
-cct.add('V1 1 0 step 10')
-cct.add('Ra 1 2 3e3')
-cct.add('Rb 2 0 1e3')
+import keras.layers as L
+from keras.models import Sequential
+
+encoder = Sequential(name='encoder')
+encoder.add(L.Input((784,)))
+encoder.add(L.Dense(256, activation='relu'))
+encoder.add(L.Dense(64, activation='relu'))
+encoder.add(L.Dense(32, activation='relu'))
+decoder = Sequential(name='decoder')
+decoder.add(L.Input((32,)))
+decoder.add(L.Dense(64, activation='relu'))
+decoder.add(L.Dense(256, activation='relu'))
+decoder.add(L.Dense(784, activation='sigmoid'))
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Cell [1;32mIn[1], line 1[0m
-[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mlcapy[39;00m [38;5;28;01mimport[39;00m Circuit
-[0;32m      2[0m cct [38;5;241m=[39m Circuit()
-[0;32m      3[0m cct[38;5;241m.[39madd([38;5;124m'[39m[38;5;124mV1 1 0 step 10[39m[38;5;124m'[39m)
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mkeras[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlayers[39;00m [38;5;28;01mas[39;00m [38;5;21;01mL[39;00m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mkeras[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m [38;5;28;01mimport[39;00m Sequential
+[0;32m      4[0m encoder [38;5;241m=[39m Sequential(name[38;5;241m=[39m[38;5;124m'[39m[38;5;124mencoder[39m[38;5;124m'[39m)
 
-[1;31mModuleNotFoundError[0m: No module named 'lcapy'
+[1;31mModuleNotFoundError[0m: No module named 'keras'
 
